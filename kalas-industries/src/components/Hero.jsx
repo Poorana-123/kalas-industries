@@ -18,7 +18,7 @@ const slides = [
   },
   {
     image: hero3,
-    title: "Transform Your Living Space",
+    title: "Transform Your Living Space with elegance",
     subtitle: "Custom-made wardrobes for every home.",
   },
 ];
