@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import "../styles/Navbar.css";
-import logo from "../assets/logo-bd-remove.png";
+import logo from "../assets/logo-remove.png";
 
 
 const menuData = [

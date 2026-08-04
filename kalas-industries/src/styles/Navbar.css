@@ -68,7 +68,7 @@ body{
 
     margin:auto;
 
-    height:130px;
+    height:150px;
 
     display:flex;
 
@@ -92,9 +92,9 @@ body{
 
 .logo img{
 
-    height:200px;
+    height:150px;
 
-    width:200px;
+    width:250px;
 
     max-width:280px;
 
@@ -502,6 +502,7 @@ body{
 
     .nav-container{
         width:95%;
+        height:auto;
     }
 
     .nav-links{
@@ -513,7 +514,7 @@ body{
     }
 
     .logo img{
-        height:170px;
+        height:150px;
     }
 
     .consult-btn{
@@ -541,13 +542,13 @@ body{
 
     .nav-container{
 
-        height:100px;
+        height:180px;
 
     }
 
     .logo img{
 
-        height:120px;
+        height:150px;
 
         max-width:180px;
 
