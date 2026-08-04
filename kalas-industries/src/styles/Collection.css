@@ -1,0 +1,371 @@
+/* =========================
+   COLLECTION SECTION
+========================= */
+
+.collections {
+
+    padding: 100px 8%;
+    background: #faf8f4;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+/* =========================
+   HEADING
+========================= */
+
+.collection-heading {
+
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+
+}
+
+
+.collection-heading span {
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: #b88a44;
+
+    font-weight: 600;
+
+}
+
+
+.collection-heading h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 48px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    color: #222;
+
+    margin: 20px 0;
+
+}
+
+
+.collection-heading h2 strong {
+
+    display: block;
+
+    color: #b88a44;
+
+    font-weight: 600;
+
+}
+
+
+
+.collection-heading p {
+
+    font-size: 16px;
+
+    color: #666;
+
+    line-height: 1.8;
+
+    font-weight: 300;
+
+}
+
+
+
+
+
+/* =========================
+   COLLECTION GRID
+========================= */
+
+
+.collection-grid {
+
+    margin-top: 70px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 35px;
+
+}
+
+
+
+
+
+/* =========================
+   CARD
+========================= */
+
+
+.collection-card {
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+
+    transition: all .4s ease;
+
+}
+
+
+
+.collection-card:hover {
+
+    transform: translateY(-12px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,0.15);
+
+}
+
+
+
+
+
+/* =========================
+   IMAGE
+========================= */
+
+
+.collection-image {
+
+    height: 300px;
+
+    overflow: hidden;
+
+    position:relative;
+
+}
+
+
+
+.collection-image::after {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.35),
+        transparent
+    );
+
+}
+
+
+
+.collection-image img {
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s ease;
+
+}
+
+
+
+.collection-card:hover img {
+
+    transform:scale(1.12);
+
+}
+
+
+
+
+
+/* =========================
+   CONTENT
+========================= */
+
+
+.collection-content {
+
+    padding:30px;
+
+}
+
+
+
+.collection-content h3 {
+
+    font-family:'Playfair Display',serif;
+
+    font-size:26px;
+
+    font-weight:600;
+
+    color:#222;
+
+    margin-bottom:12px;
+
+}
+
+
+
+.collection-content p {
+
+    font-size:15px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+/* BUTTON */
+
+
+.collection-content button {
+
+
+    background:transparent;
+
+    border:0;
+
+    padding:0;
+
+    color:#b88a44;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+.collection-content button:hover {
+
+    letter-spacing:2px;
+
+}
+
+
+
+
+
+/* GOLD TOP LINE EFFECT */
+
+.collection-card::before {
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:4px;
+
+    background:#b88a44;
+
+    transition:.4s;
+
+}
+
+
+
+.collection-card:hover::before {
+
+    width:100%;
+
+}
+
+
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media(max-width:1100px){
+
+
+.collection-grid {
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.collections {
+
+    padding:70px 5%;
+
+}
+
+
+.collection-heading h2 {
+
+    font-size:34px;
+
+}
+
+
+.collection-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.collection-image {
+
+    height:250px;
+
+}
+
+}

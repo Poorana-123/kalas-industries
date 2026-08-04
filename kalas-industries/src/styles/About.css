@@ -1,0 +1,492 @@
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about {
+
+  padding: 100px 8%;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+
+/* =========================
+   TOP HEADING
+========================= */
+
+.about-heading {
+
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+
+}
+
+
+.section-tag {
+
+  font-family: 'Montserrat', sans-serif;
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
+
+  font-weight: 600;
+
+  color: #b88a44;
+
+}
+
+
+
+.about-heading h2 {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 48px;
+
+  line-height: 1.3;
+
+  font-weight: 600;
+
+  color: #1d1d1d;
+
+  margin: 20px 0;
+
+}
+
+
+
+.about-heading h2 span {
+
+  display: block;
+
+  color: #b88a44;
+
+}
+
+
+
+.about-heading p {
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  font-weight: 300;
+
+  color: #666;
+
+}
+
+
+
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.about-main {
+
+  margin-top: 80px;
+
+  display: grid;
+
+  grid-template-columns: 280px 1fr 1fr;
+
+  gap: 55px;
+
+  align-items: center;
+
+}
+
+
+
+
+
+/* =========================
+   CIRCLE IMAGE
+========================= */
+
+.about-image {
+
+  width:260px;
+  height:260px;
+
+  margin:auto;
+
+  position:relative;
+
+  border-radius:50%;
+
+  overflow:hidden;
+
+  border:8px solid #ffffff;
+
+  box-shadow:0 15px 35px rgba(0,0,0,0.18);
+
+}
+
+
+/* Image Fit */
+
+.about-image img {
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  object-position:center top;
+
+  display:block;
+
+  border-radius:50%;
+
+}
+
+
+
+/* Gold Outer Circle */
+
+.about-image::before {
+
+  content:"";
+
+  position:absolute;
+
+  width:280px;
+
+  height:280px;
+
+  border-radius:50%;
+
+  border:2px solid #b88a44;
+
+  top:-18px;
+
+  left:-18px;
+
+  z-index:-1;
+
+}
+
+/* =========================
+   CONTENT BOX
+========================= */
+
+
+.about-left,
+.about-right {
+
+
+  padding:10px;
+
+
+}
+
+
+
+.about-left h3,
+.about-right h3 {
+
+
+  font-family:'Playfair Display',serif;
+
+  font-size:30px;
+
+  font-weight:600;
+
+  color:#222;
+
+  margin-bottom:20px;
+
+
+}
+
+
+
+
+.about-left p {
+
+
+  font-size:16px;
+
+  line-height:1.9;
+
+  color:#555;
+
+}
+
+
+
+
+
+/* =========================
+   SERVICES LIST
+========================= */
+
+
+.feature {
+
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  margin-bottom:20px;
+
+  font-size:15px;
+
+  color:#444;
+
+  font-weight:500;
+
+
+}
+
+
+
+.feature svg {
+
+
+  color:#b88a44;
+
+  font-size:21px;
+
+
+}
+
+
+
+
+
+/* =========================
+   STATS
+========================= */
+
+
+.about-stats {
+
+
+  display:flex;
+
+  gap:45px;
+
+  margin-top:30px;
+
+}
+
+
+
+.about-stats h4 {
+
+
+  font-family:'Playfair Display',serif;
+
+  font-size:38px;
+
+  margin:0;
+
+  color:#b88a44;
+
+
+}
+
+
+
+.about-stats span {
+
+
+  font-family:'Montserrat',sans-serif;
+
+  font-size:12px;
+
+  letter-spacing:1px;
+
+  text-transform:uppercase;
+
+  color:#777;
+
+
+}
+
+
+
+
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+
+.feature:hover {
+
+
+  transform:translateX(8px);
+
+  transition:.3s ease;
+
+}
+
+
+.feature:hover svg {
+
+  transform:scale(1.2);
+
+  transition:.3s ease;
+
+}
+
+
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media(max-width:1100px){
+
+
+.about-main {
+
+
+  grid-template-columns:1fr;
+
+  text-align:center;
+
+
+}
+
+
+.about-image {
+
+
+  margin-bottom:20px;
+
+
+}
+
+
+.about-left p {
+
+
+  max-width:700px;
+
+  margin:auto;
+
+
+}
+
+
+.feature {
+
+
+  justify-content:center;
+
+
+}
+
+
+.about-stats {
+
+
+  justify-content:center;
+
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+.about {
+
+
+padding:70px 5%;
+
+
+}
+
+
+
+.about-heading h2 {
+
+
+font-size:34px;
+
+
+}
+
+
+
+.about-heading p {
+
+
+font-size:15px;
+
+
+}
+
+
+
+.about-image img {
+
+
+width:200px;
+
+height:200px;
+
+
+}
+
+
+
+.about-image::before {
+
+
+width:220px;
+
+height:220px;
+
+
+}
+
+
+
+.about-stats {
+
+
+flex-direction:column;
+
+gap:20px;
+
+
+}
+
+
+
+.about-left h3,
+.about-right h3 {
+
+
+font-size:26px;
+
+
+}
+
+
+}
