@@ -1,7 +1,12 @@
 /* ==========================================
-   Google Fonts
+   GOOGLE FONTS
 ========================================== */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+/* ==========================================
+   RESET
+========================================== */
 
 *{
     margin:0;
@@ -15,11 +20,12 @@ html{
 
 body{
     font-family:"Poppins",sans-serif;
-    background:#f8f8f8;
+    background:#f6f6f6;
+    overflow-x:hidden;
 }
 
 /* ==========================================
-            NAVBAR
+   NAVBAR
 ========================================== */
 
 .navbar{
@@ -40,7 +46,7 @@ body{
 }
 
 /* ==========================================
-        Navbar On Scroll
+   NAVBAR WHEN SCROLLED
 ========================================== */
 
 .navbar.scrolled{
@@ -52,12 +58,12 @@ body{
 
     border-bottom:1px solid rgba(200,161,101,.25);
 
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
 
 }
 
 /* ==========================================
-        Container
+   CONTAINER
 ========================================== */
 
 .nav-container{
@@ -68,7 +74,7 @@ body{
 
     margin:auto;
 
-    height:150px;
+    height:120px;
 
     display:flex;
 
@@ -79,7 +85,7 @@ body{
 }
 
 /* ==========================================
-            LOGO
+   LOGO
 ========================================== */
 
 .logo{
@@ -88,15 +94,15 @@ body{
 
     align-items:center;
 
+    flex-shrink:0;
+
 }
 
 .logo img{
 
-    height:150px;
+    width:230px;
 
-    width:250px;
-
-    max-width:280px;
+    height:160px;
 
     object-fit:contain;
 
@@ -108,49 +114,35 @@ body{
 
 .logo img:hover{
 
-    transform:scale(1.05);
+    transform:scale(1.04);
 
 }
 
-/* Logo becomes slightly smaller on scroll */
+/* Smaller logo while scrolling */
 
 .navbar.scrolled .logo img{
 
-    height:155px;
+    width:210px;
+
+    height:145px;
 
 }
 
 /* ==========================================
-      Navbar Text Color on Scroll
-========================================== */
-
-.navbar.scrolled .nav-links li>a{
-
-    color:#2a2a2a;
-
-}
-
-.navbar.scrolled .nav-links li>a:hover{
-
-    color:#C8A165;
-
-}
-
-/* ==========================================
-        CTA Button
+   CTA BUTTON
 ========================================== */
 
 .consult-btn{
 
-    padding:14px 30px;
+    padding:14px 28px;
 
     border:2px solid #C8A165;
 
+    border-radius:40px;
+
     background:transparent;
 
-    color:#ffffff;
-
-    border-radius:50px;
+    color:#fff;
 
     font-size:15px;
 
@@ -170,18 +162,18 @@ body{
 
     transform:translateY(-3px);
 
+    box-shadow:0 12px 30px rgba(200,161,101,.35);
+
 }
 
 .navbar.scrolled .consult-btn{
 
     color:#222;
 
-    border-color:#C8A165;
-
 }
 
 /* ==========================================
-        Mobile Icon
+   MOBILE MENU ICON
 ========================================== */
 
 .menu-icon{
@@ -190,9 +182,11 @@ body{
 
     font-size:30px;
 
-    color:#ffffff;
+    color:#fff;
 
     cursor:pointer;
+
+    transition:.3s;
 
 }
 
@@ -203,13 +197,13 @@ body{
 }
 
 /* ==========================================
-            Navigation Links
+   NAVIGATION LINKS
 ========================================== */
 
 .nav-links{
     display:flex;
     align-items:center;
-    gap:38px;
+    gap:34px;
     list-style:none;
 }
 
@@ -227,8 +221,6 @@ body{
 
     color:#ffffff;
 
-    font-family:"Poppins",sans-serif;
-
     font-size:16px;
 
     font-weight:500;
@@ -238,8 +230,9 @@ body{
     transition:.35s ease;
 
     padding:10px 0;
-
 }
+
+/* Hover */
 
 .nav-links li>a:hover{
 
@@ -247,7 +240,7 @@ body{
 
 }
 
-/* Gold Underline */
+/* Underline Animation */
 
 .nav-links li::after{
 
@@ -256,7 +249,6 @@ body{
     position:absolute;
 
     left:0;
-
     bottom:-8px;
 
     width:0;
@@ -275,8 +267,22 @@ body{
 
 }
 
+/* Scroll */
+
+.navbar.scrolled .nav-links li>a{
+
+    color:#222;
+
+}
+
+.navbar.scrolled .nav-links li>a:hover{
+
+    color:#C8A165;
+
+}
+
 /* ==========================================
-        Dropdown Icon
+      DROPDOWN ICON
 ========================================== */
 
 .down-icon{
@@ -287,31 +293,33 @@ body{
 
 }
 
-.mega-parent:hover .down-icon{
+.down-icon.rotate{
 
     transform:rotate(180deg);
 
 }
 
 /* ==========================================
-            Mega Menu
+        MEGA MENU
 ========================================== */
 
 .mega-parent{
+
     position:static;
+
 }
 
 .mega-menu{
 
     position:fixed;
 
-    top:120px;
+    top:115px;
 
     left:50%;
 
     transform:translateX(-50%) translateY(20px);
 
-    width:min(1250px,92%);
+    width:min(1280px,92%);
 
     display:grid;
 
@@ -329,7 +337,7 @@ body{
 
     border:1px solid rgba(255,255,255,.18);
 
-    border-radius:24px;
+    border-radius:22px;
 
     box-shadow:
     0 25px 60px rgba(0,0,0,.25);
@@ -341,28 +349,6 @@ body{
     transition:.35s ease;
 
     z-index:9999;
-
-}
-
-/* Shine Effect */
-
-.mega-menu::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:24px;
-
-    background:linear-gradient(
-        135deg,
-        rgba(255,255,255,.15),
-        rgba(255,255,255,0)
-    );
-
-    pointer-events:none;
 
 }
 
@@ -378,21 +364,43 @@ body{
 
 }
 
+/* Glass Highlight */
+
+.mega-menu::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:22px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,0)
+    );
+
+    pointer-events:none;
+
+}
+
 /* ==========================================
-            Mega Columns
+        MEGA COLUMN
 ========================================== */
 
 .mega-column{
 
     background:rgba(255,255,255,.05);
 
-    backdrop-filter:blur(12px);
-
     border:1px solid rgba(255,255,255,.08);
 
     border-radius:18px;
 
-    padding:22px;
+    backdrop-filter:blur(12px);
+
+    padding:24px;
 
     display:flex;
 
@@ -404,55 +412,53 @@ body{
 
 .mega-column:hover{
 
+    transform:translateY(-6px);
+
     background:rgba(255,255,255,.10);
 
-    border-color:rgba(200,161,101,.35);
-
-    transform:translateY(-6px);
+    border-color:rgba(200,161,101,.30);
 
 }
 
 /* ==========================================
-            Heading
+        COLUMN HEADING
 ========================================== */
 
 .mega-column h4{
 
     font-family:"Playfair Display",serif;
 
-    font-size:22px;
-
     color:#C8A165;
+
+    font-size:22px;
 
     margin-bottom:18px;
 
     padding-bottom:12px;
 
-    border-bottom:1px solid rgba(200,161,101,.30);
+    border-bottom:1px solid rgba(200,161,101,.25);
 
 }
 
 /* ==========================================
-            Mega Links
+        LINKS
 ========================================== */
 
 .mega-column a{
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:15px;
+
+    padding:10px 0;
 
     display:flex;
 
     align-items:center;
 
-    text-decoration:none;
-
-    color:#ffffff;
-
-    font-size:15px;
-
-    font-weight:400;
-
-    padding:9px 0;
-
-    transition:.3s ease;
+    transition:.3s;
 
 }
 
@@ -462,7 +468,7 @@ body{
 
     color:#C8A165;
 
-    margin-right:10px;
+    margin-right:12px;
 
     font-size:20px;
 
@@ -476,15 +482,7 @@ body{
 
 }
 
-.mega-column a:hover::before{
-
-    margin-right:16px;
-
-}
-
-/* ==========================================
-            Divider
-========================================== */
+/* Divider */
 
 .mega-column:not(:last-child){
 
@@ -493,28 +491,29 @@ body{
 }
 
 /* ==========================================
-            Responsive Design
+            RESPONSIVE DESIGN
 ========================================== */
 
-/* ---------- Large Tablets ---------- */
+/* ---------- Large Laptop ---------- */
 
 @media (max-width:1200px){
 
     .nav-container{
         width:95%;
-        height:auto;
-    }
-
-    .nav-links{
-        gap:25px;
-    }
-
-    .nav-links li a{
-        font-size:15px;
+        height:110px;
     }
 
     .logo img{
-        height:150px;
+        width:200px;
+        height:140px;
+    }
+
+    .nav-links{
+        gap:24px;
+    }
+
+    .nav-links li>a{
+        font-size:15px;
     }
 
     .consult-btn{
@@ -523,92 +522,73 @@ body{
     }
 
     .mega-menu{
-
         width:95%;
-
         grid-template-columns:repeat(2,1fr);
-
-        gap:25px;
-
-        padding:30px;
-
+        gap:20px;
     }
 
 }
 
-/* ---------- Tablets ---------- */
+
+/* ---------- Tablet ---------- */
 
 @media (max-width:992px){
 
     .nav-container{
-
-        height:180px;
-
+        height:95px;
     }
 
     .logo img{
-
-        height:150px;
-
-        max-width:180px;
-
+        width:180px;
+        height:120px;
     }
 
     .consult-btn{
-
         display:none;
-
     }
 
     .menu-icon{
-
         display:block;
-
         font-size:28px;
-
         color:#fff;
-
         z-index:10001;
-
     }
 
     .navbar.scrolled .menu-icon{
-
         color:#222;
-
     }
+
+    /* Mobile Menu */
 
     .nav-links{
 
         position:fixed;
 
-        top:100px;
+        top:95px;
 
         left:-100%;
 
         width:100%;
 
-        height:calc(100vh - 100px);
+        height:calc(100vh - 95px);
 
-        background:rgba(18,18,18,.95);
+        background:rgba(20,20,20,.96);
 
-        backdrop-filter:blur(25px);
-
-        display:flex;
+        backdrop-filter:blur(20px);
 
         flex-direction:column;
 
+        align-items:stretch;
+
         justify-content:flex-start;
 
-        align-items:flex-start;
-
-        padding:40px;
-
-        gap:20px;
-
-        transition:.4s ease;
+        gap:0;
 
         overflow-y:auto;
+
+        transition:.4s;
+
+        padding:20px;
 
     }
 
@@ -624,19 +604,23 @@ body{
 
     }
 
-    .nav-links li a{
+    .nav-links li>a{
 
-        color:#fff;
-
-        width:100%;
+        display:flex;
 
         justify-content:space-between;
 
-        font-size:17px;
+        align-items:center;
 
-        padding:14px 0;
+        width:100%;
+
+        color:#fff;
+
+        padding:18px 10px;
 
         border-bottom:1px solid rgba(255,255,255,.08);
+
+        font-size:17px;
 
     }
 
@@ -646,135 +630,146 @@ body{
 
     }
 
-    /* Mega Menu on Tablet */
+    /* Mobile Mega Menu */
 
     .mega-menu{
 
-        position:relative;
+    position: static !important;
 
-        top:10px;
+    width: 100% !important;
 
-        left:0;
+    left: 0 !important;
+    top: 0 !important;
 
-        transform:none;
+    transform: none !important;
 
-        width:100%;
+    display: none;
 
-        display:grid;
+    grid-template-columns: 1fr;
 
-        grid-template-columns:1fr;
+    gap: 12px;
 
-        padding:20px;
+    margin-top: 10px;
 
-        gap:20px;
+    padding: 15px;
 
-        background:rgba(255,255,255,.06);
+    background: rgba(255,255,255,.08);
 
-        border-radius:16px;
+    backdrop-filter: blur(15px);
 
-        margin-top:15px;
+    -webkit-backdrop-filter: blur(15px);
 
-        min-height:auto;
+    border: 1px solid rgba(255,255,255,.12);
 
-    }
+    border-radius: 15px;
 
-    .mega-column{
+    box-shadow: none;
 
-        padding:18px;
+    opacity: 1;
 
-    }
+    visibility: visible;
+
+    min-height: auto;
+}
+
+.mega-menu.show{
+
+    display: grid;
 
 }
+    .mega-column{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:12px;
+
+}
+
+    .mega-column h4{
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+}
+
+    .mega-column a{
+
+    font-size:14px;
+
+    padding:8px 0;
+
+}
+.nav-links{
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+}
+
 
 /* ---------- Mobile ---------- */
 
 @media (max-width:768px){
 
     .nav-container{
-
-        height:90px;
-
+        height:85px;
     }
 
     .logo img{
-
-        height:95px;
-
-        max-width:150px;
-
+        width:170px;
+        height:105px;
     }
 
     .menu-icon{
-
         font-size:26px;
-
     }
 
     .nav-links{
 
-        top:90px;
+        top:85px;
 
-        height:calc(100vh - 90px);
+        height:calc(100vh - 85px);
 
-        padding:25px;
-
-    }
-
-    .mega-column h4{
-
-        font-size:18px;
-
-    }
-
-    .mega-column a{
-
-        font-size:14px;
+        padding:15px;
 
     }
 
 }
+
 
 /* ---------- Small Mobile ---------- */
 
 @media (max-width:480px){
 
     .nav-container{
-
         width:94%;
-
         height:80px;
-
     }
 
     .logo img{
-
-        height:80px;
-
-        max-width:130px;
-
+        width:150px;
+        height:95px;
     }
 
     .menu-icon{
-
         font-size:24px;
-
     }
 
-    .nav-links{
-
-        padding:20px;
-
-    }
-
-    .nav-links li a{
+    .nav-links li>a{
 
         font-size:15px;
 
-    }
-
-    .mega-menu{
-
-        padding:15px;
+        padding:16px 5px;
 
     }
 
@@ -798,17 +793,10 @@ body{
 
 }
 
-/* ---------- Extra Small Devices ---------- */
+
+/* ---------- Extra Small ---------- */
 
 @media (max-width:360px){
-
-    .logo img{
-
-        height:70px;
-
-        max-width:115px;
-
-    }
 
     .nav-container{
 
@@ -816,9 +804,11 @@ body{
 
     }
 
-    .menu-icon{
+    .logo img{
 
-        font-size:22px;
+        width:130px;
+
+        height:80px;
 
     }
 
