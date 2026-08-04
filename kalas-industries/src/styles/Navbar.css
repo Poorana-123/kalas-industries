@@ -31,22 +31,21 @@ body{
 .navbar{
 
     position:fixed;
-
     top:0;
     left:0;
 
     width:100%;
 
-    z-index:9999;
+    background:transparent;
 
     transition:.45s ease;
 
-    background:transparent;
+    z-index:9999;
 
 }
 
 /* ==========================================
-   NAVBAR WHEN SCROLLED
+   NAVBAR SCROLL
 ========================================== */
 
 .navbar.scrolled{
@@ -63,7 +62,7 @@ body{
 }
 
 /* ==========================================
-   CONTAINER
+   NAV CONTAINER
 ========================================== */
 
 .nav-container{
@@ -85,7 +84,7 @@ body{
 }
 
 /* ==========================================
-   LOGO
+        FLOATING LOGO
 ========================================== */
 
 .logo{
@@ -94,42 +93,88 @@ body{
 
     align-items:center;
 
-    flex-shrink:0;
+    justify-content:center;
+
+    position:relative;
 
 }
 
-.logo img{
+/* Floating Circle */
 
-    width:230px;
+.logo-floating{
 
-    height:160px;
+    width:165px;
 
-    object-fit:contain;
+    height:165px;
+
+    position:relative;
+
+    top:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        145deg,
+        #ffffff,
+        #f7f4ef
+    );
+
+    border:4px solid #C8A165;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.18),
+        0 0 25px rgba(200,161,101,.22);
 
     transition:.4s ease;
 
-    cursor:pointer;
+    z-index:10000;
 
 }
 
-.logo img:hover{
+/* Hover Effect */
 
-    transform:scale(1.04);
+.logo-floating:hover{
 
-}
+    transform:translateY(-6px) scale(1.03);
 
-/* Smaller logo while scrolling */
-
-.navbar.scrolled .logo img{
-
-    width:210px;
-
-    height:145px;
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.22),
+        0 0 35px rgba(200,161,101,.40);
 
 }
 
+/* Logo Image */
+
+.logo-floating img{
+
+    width:86%;
+
+    height:auto;
+
+    object-fit:contain;
+
+}
+
+/* Smaller While Scroll */
+
+
+.navbar.scrolled .logo-floating{
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.20),
+        0 0 35px rgba(200,161,101,.45);
+
+    border-color:#C8A165;
+
+}
 /* ==========================================
-   CTA BUTTON
+        CTA BUTTON
 ========================================== */
 
 .consult-btn{
@@ -138,11 +183,11 @@ body{
 
     border:2px solid #C8A165;
 
-    border-radius:40px;
-
     background:transparent;
 
-    color:#fff;
+    color:#ffffff;
+
+    border-radius:40px;
 
     font-size:15px;
 
@@ -162,7 +207,7 @@ body{
 
     transform:translateY(-3px);
 
-    box-shadow:0 12px 30px rgba(200,161,101,.35);
+    box-shadow:0 15px 30px rgba(200,161,101,.35);
 
 }
 
@@ -173,7 +218,7 @@ body{
 }
 
 /* ==========================================
-   MOBILE MENU ICON
+        MOBILE MENU ICON
 ========================================== */
 
 .menu-icon{
@@ -182,11 +227,11 @@ body{
 
     font-size:30px;
 
-    color:#fff;
+    color:#ffffff;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.35s ease;
 
 }
 
@@ -197,7 +242,7 @@ body{
 }
 
 /* ==========================================
-   NAVIGATION LINKS
+        NAVIGATION LINKS
 ========================================== */
 
 .nav-links{
@@ -215,7 +260,7 @@ body{
 
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:8px;
 
     text-decoration:none;
 
@@ -227,12 +272,11 @@ body{
 
     letter-spacing:.3px;
 
+    padding:10px 0;
+
     transition:.35s ease;
 
-    padding:10px 0;
 }
-
-/* Hover */
 
 .nav-links li>a:hover{
 
@@ -240,7 +284,7 @@ body{
 
 }
 
-/* Underline Animation */
+/* Gold Underline */
 
 .nav-links li::after{
 
@@ -249,6 +293,7 @@ body{
     position:absolute;
 
     left:0;
+
     bottom:-8px;
 
     width:0;
@@ -257,7 +302,7 @@ body{
 
     background:#C8A165;
 
-    transition:.35s;
+    transition:.35s ease;
 
 }
 
@@ -267,7 +312,7 @@ body{
 
 }
 
-/* Scroll */
+/* Scroll Navbar Text */
 
 .navbar.scrolled .nav-links li>a{
 
@@ -282,7 +327,7 @@ body{
 }
 
 /* ==========================================
-      DROPDOWN ICON
+        DROPDOWN ICON
 ========================================== */
 
 .down-icon{
@@ -310,329 +355,6 @@ body{
 }
 
 .mega-menu{
-
-    position:fixed;
-
-    top:115px;
-
-    left:50%;
-
-    transform:translateX(-50%) translateY(20px);
-
-    width:min(1280px,92%);
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:28px;
-
-    padding:35px;
-
-    background:rgba(255,255,255,.10);
-
-    backdrop-filter:blur(25px);
-
-    -webkit-backdrop-filter:blur(25px);
-
-    border:1px solid rgba(255,255,255,.18);
-
-    border-radius:22px;
-
-    box-shadow:
-    0 25px 60px rgba(0,0,0,.25);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.35s ease;
-
-    z-index:9999;
-
-}
-
-/* Show */
-
-.mega-menu.show{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateX(-50%) translateY(0);
-
-}
-
-/* Glass Highlight */
-
-.mega-menu::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:22px;
-
-    background:linear-gradient(
-        135deg,
-        rgba(255,255,255,.18),
-        rgba(255,255,255,0)
-    );
-
-    pointer-events:none;
-
-}
-
-/* ==========================================
-        MEGA COLUMN
-========================================== */
-
-.mega-column{
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:18px;
-
-    backdrop-filter:blur(12px);
-
-    padding:24px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    transition:.35s ease;
-
-}
-
-.mega-column:hover{
-
-    transform:translateY(-6px);
-
-    background:rgba(255,255,255,.10);
-
-    border-color:rgba(200,161,101,.30);
-
-}
-
-/* ==========================================
-        COLUMN HEADING
-========================================== */
-
-.mega-column h4{
-
-    font-family:"Playfair Display",serif;
-
-    color:#C8A165;
-
-    font-size:22px;
-
-    margin-bottom:18px;
-
-    padding-bottom:12px;
-
-    border-bottom:1px solid rgba(200,161,101,.25);
-
-}
-
-/* ==========================================
-        LINKS
-========================================== */
-
-.mega-column a{
-
-    text-decoration:none;
-
-    color:#fff;
-
-    font-size:15px;
-
-    padding:10px 0;
-
-    display:flex;
-
-    align-items:center;
-
-    transition:.3s;
-
-}
-
-.mega-column a::before{
-
-    content:"›";
-
-    color:#C8A165;
-
-    margin-right:12px;
-
-    font-size:20px;
-
-}
-
-.mega-column a:hover{
-
-    color:#C8A165;
-
-    padding-left:8px;
-
-}
-
-/* Divider */
-
-.mega-column:not(:last-child){
-
-    border-right:1px solid rgba(255,255,255,.08);
-
-}
-
-/* ==========================================
-            RESPONSIVE DESIGN
-========================================== */
-
-/* ---------- Large Laptop ---------- */
-
-@media (max-width:1200px){
-
-    .nav-container{
-        width:95%;
-        height:110px;
-    }
-
-    .logo img{
-        width:200px;
-        height:140px;
-    }
-
-    .nav-links{
-        gap:24px;
-    }
-
-    .nav-links li>a{
-        font-size:15px;
-    }
-
-    .consult-btn{
-        padding:12px 22px;
-        font-size:14px;
-    }
-
-    .mega-menu{
-        width:95%;
-        grid-template-columns:repeat(2,1fr);
-        gap:20px;
-    }
-
-}
-
-
-/* ---------- Tablet ---------- */
-
-@media (max-width:992px){
-
-    .nav-container{
-        height:95px;
-    }
-
-    .logo img{
-        width:180px;
-        height:120px;
-    }
-
-    .consult-btn{
-        display:none;
-    }
-
-    .menu-icon{
-        display:block;
-        font-size:28px;
-        color:#fff;
-        z-index:10001;
-    }
-
-    .navbar.scrolled .menu-icon{
-        color:#222;
-    }
-
-    /* Mobile Menu */
-
-    .nav-links{
-
-        position:fixed;
-
-        top:95px;
-
-        left:-100%;
-
-        width:100%;
-
-        height:calc(100vh - 95px);
-
-        background:rgba(20,20,20,.96);
-
-        backdrop-filter:blur(20px);
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        justify-content:flex-start;
-
-        gap:0;
-
-        overflow-y:auto;
-
-        transition:.4s;
-
-        padding:20px;
-
-    }
-
-    .nav-links.active{
-
-        left:0;
-
-    }
-
-    .nav-links li{
-
-        width:100%;
-
-    }
-
-    .nav-links li>a{
-
-        display:flex;
-
-        justify-content:space-between;
-
-        align-items:center;
-
-        width:100%;
-
-        color:#fff;
-
-        padding:18px 10px;
-
-        border-bottom:1px solid rgba(255,255,255,.08);
-
-        font-size:17px;
-
-    }
-
-    .nav-links li::after{
-
-        display:none;
-
-    }
-
-    /* Mobile Mega Menu */
-
-    .mega-menu{
 
     position: static !important;
 
@@ -677,7 +399,34 @@ body{
     display: grid;
 
 }
-    .mega-column{
+
+/* Premium Glass Shine */
+
+.mega-menu::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,0)
+    );
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+        MEGA COLUMNS
+========================================== */
+
+.mega-column{
 
     width:100%;
 
@@ -691,7 +440,19 @@ body{
 
 }
 
-    .mega-column h4{
+.mega-column:hover{
+
+    transform:translateY(-6px);
+
+    background:rgba(255,255,255,.12);
+
+    border-color:rgba(200,161,101,.30);
+
+}
+
+/* Heading */
+
+.mega-column h4{
 
     font-size:18px;
 
@@ -699,77 +460,355 @@ body{
 
 }
 
-    .mega-column a{
+/* Links */
+
+.mega-column a{
+
+    display:flex;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    font-weight:400;
+
+    padding:10px 0;
+
+    transition:.3s ease;
+
+}
+
+.mega-column a::before{
+
+    content:"›";
+
+    color:#C8A165;
+
+    font-size:20px;
+
+    margin-right:12px;
+
+}
+
+.mega-column a:hover{
+
+    color:#C8A165;
+
+    padding-left:8px;
+
+}
+
+.mega-column a:hover::before{
+
+    margin-right:18px;
+
+}
+
+.mega-column a{
 
     font-size:14px;
 
     padding:8px 0;
 
 }
-.nav-links{
+/* Divider */
 
-    overflow-y:auto;
+.mega-column:not(:last-child){
 
-    overflow-x:hidden;
-
-}
+    border-right:1px solid rgba(255,255,255,.08);
 
 }
 
+/* ==========================================
+        RESPONSIVE DESIGN
+========================================== */
 
-/* ---------- Mobile ---------- */
+/* ---------- Large Laptop ---------- */
 
-@media (max-width:768px){
+@media (max-width:1200px){
 
     .nav-container{
-        height:85px;
+        width:95%;
+        height:110px;
     }
 
-    .logo img{
-        width:170px;
-        height:105px;
-    }
-
-    .menu-icon{
-        font-size:26px;
+    .logo-floating{
+        width:150px;
+        height:150px;
+        top:15px;
     }
 
     .nav-links{
+        gap:24px;
+    }
 
-        top:85px;
+    .nav-links li>a{
+        font-size:15px;
+    }
 
-        height:calc(100vh - 85px);
+    .consult-btn{
+        padding:12px 22px;
+        font-size:14px;
+    }
 
-        padding:15px;
-
+    .mega-menu{
+        width:95%;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
     }
 
 }
 
 
-/* ---------- Small Mobile ---------- */
+/* ---------- Tablet ---------- */
 
-@media (max-width:480px){
+@media (max-width:992px){
 
     .nav-container{
-        width:94%;
-        height:80px;
+        height:90px;
     }
 
-    .logo img{
-        width:150px;
-        height:95px;
+    .logo-floating{
+        width:120px;
+        height:120px;
+        top:5px;
+    }
+
+    .consult-btn{
+        display:none;
     }
 
     .menu-icon{
-        font-size:24px;
+        display:block;
+        font-size:28px;
+        color:#fff;
+        z-index:10001;
+    }
+
+    .navbar.scrolled .menu-icon{
+        color:#222;
+    }
+
+    /* Mobile Navigation */
+
+    .nav-links{
+
+        position:fixed;
+
+        top:90px;
+        left:-100%;
+
+        width:100%;
+        height:calc(100vh - 90px);
+
+        background:rgba(20,20,20,.96);
+
+        backdrop-filter:blur(20px);
+
+        display:flex;
+        flex-direction:column;
+
+        align-items:stretch;
+
+        justify-content:flex-start;
+
+        gap:0;
+
+        overflow-y:auto;
+
+        transition:.4s ease;
+
+        padding:20px;
+
+    }
+
+    .nav-links.active{
+
+        left:0;
+
+    }
+
+    .nav-links li{
+
+        width:100%;
+
     }
 
     .nav-links li>a{
 
-        font-size:15px;
+        display:flex;
 
-        padding:16px 5px;
+        justify-content:space-between;
+
+        align-items:center;
+
+        width:100%;
+
+        color:#fff;
+
+        font-size:17px;
+
+        padding:18px 10px;
+
+        border-bottom:1px solid rgba(255,255,255,.08);
+
+    }
+
+    .nav-links li::after{
+
+        display:none;
+
+    }
+
+    /* Mobile Accordion */
+
+    .mega-menu{
+
+        position:relative;
+
+        top:0;
+        left:0;
+
+        transform:none;
+
+        width:100%;
+
+        display:none;
+
+        grid-template-columns:1fr;
+
+        gap:15px;
+
+        margin-top:10px;
+
+        padding:15px;
+
+        background:rgba(255,255,255,.05);
+
+        backdrop-filter:blur(15px);
+
+        border:1px solid rgba(255,255,255,.08);
+
+        border-radius:16px;
+
+        opacity:1;
+
+        visibility:visible;
+
+        box-shadow:none;
+
+        min-height:auto;
+
+    }
+
+    .mega-menu.show{
+
+        display:grid;
+
+    }
+
+    .mega-column{
+
+        padding:18px;
+
+        border:none;
+
+        background:rgba(255,255,255,.04);
+
+        border-radius:14px;
+
+    }
+
+    .mega-column h4{
+
+        font-size:18px;
+
+        margin-bottom:10px;
+
+    }
+
+    .mega-column a{
+
+        font-size:14px;
+
+        padding:8px 0;
+
+    }
+
+}
+
+/* ==========================================
+        MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .nav-container{
+
+        width:94%;
+
+        height:80px;
+
+    }
+
+    /* Floating Logo */
+
+    .logo-floating{
+
+        width:95px;
+        height:95px;
+
+        top:2px;
+
+        border-width:3px;
+
+    }
+
+    .logo-floating img{
+
+        width:82%;
+
+    }
+
+    /* Mobile Icon */
+
+    .menu-icon{
+
+        font-size:26px;
+
+    }
+
+    /* Navigation */
+
+    .nav-links{
+
+        top:80px;
+
+        height:calc(100vh - 80px);
+
+        padding:18px;
+
+    }
+
+    .nav-links li>a{
+
+        font-size:16px;
+
+        padding:16px 8px;
+
+    }
+
+    /* Mega Menu */
+
+    .mega-menu{
+
+        padding:12px;
+
+        gap:12px;
 
     }
 
@@ -787,29 +826,191 @@ body{
 
     .mega-column a{
 
-        font-size:13px;
+        font-size:14px;
 
     }
 
 }
 
 
-/* ---------- Extra Small ---------- */
+/* ==========================================
+        SMALL MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    .nav-container{
+
+        width:95%;
+
+        height:72px;
+
+    }
+
+    .logo-floating{
+
+        width:80px;
+
+        height:80px;
+
+        top:0;
+
+        border-width:2px;
+
+    }
+
+    .logo-floating img{
+
+        width:80%;
+
+    }
+
+    .menu-icon{
+
+        font-size:24px;
+
+    }
+
+    .nav-links{
+
+        top:72px;
+
+        height:calc(100vh - 72px);
+
+        padding:15px;
+
+    }
+
+    .nav-links li>a{
+
+        font-size:15px;
+
+        padding:15px 5px;
+
+    }
+
+    .mega-menu{
+
+        padding:10px;
+
+    }
+
+    .mega-column{
+
+        padding:14px;
+
+    }
+
+    .mega-column h4{
+
+        font-size:16px;
+
+    }
+
+    .mega-column a{
+
+        font-size:13px;
+
+        padding:6px 0;
+
+    }
+
+}
+
+
+/* ==========================================
+        EXTRA SMALL DEVICES
+========================================== */
 
 @media (max-width:360px){
 
     .nav-container{
 
-        height:75px;
+        height:68px;
 
     }
 
-    .logo img{
+    .logo-floating{
 
-        width:130px;
+        width:70px;
 
-        height:80px;
+        height:70px;
 
     }
+
+    .logo-floating img{
+
+        width:78%;
+
+    }
+
+    .menu-icon{
+
+        font-size:22px;
+
+    }
+
+    .nav-links{
+
+        top:68px;
+
+        height:calc(100vh - 68px);
+
+    }
+
+}
+
+
+/* ==========================================
+        SMOOTH SCROLLBAR
+========================================== */
+
+.nav-links::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.nav-links::-webkit-scrollbar-thumb{
+
+    background:#C8A165;
+
+    border-radius:20px;
+
+}
+
+.nav-links::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+/* ==========================================
+        SELECTION COLOR
+========================================== */
+
+::selection{
+
+    background:#C8A165;
+
+    color:#ffffff;
+
+}
+
+
+/* ==========================================
+        SMOOTH TRANSITIONS
+========================================== */
+
+.logo-floating,
+.nav-links li a,
+.consult-btn,
+.mega-column,
+.mega-column a,
+.menu-icon,
+.down-icon{
+
+    transition:all .35s ease;
 
 }

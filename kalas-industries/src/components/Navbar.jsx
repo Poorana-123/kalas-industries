@@ -294,8 +294,11 @@ const Navbar = () => {
 
         {/* Logo */}
         <div className="logo">
-          <img src={logo} alt="Kalas Industries" />
-        </div>
+  <div className="logo-floating">
+    
+      <img src={logo} alt="Kala's Industries" />
+  </div>
+</div>
 
         {/* Navigation */}
         <ul className={menuOpen ? "nav-links active" : "nav-links"}>
