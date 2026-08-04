@@ -1,288 +1,459 @@
-/* Google Fonts */
+/* ==========================================
+   Google Fonts
+========================================== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Navbar */
-.navbar {
-  position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    transition: all 0.4s ease;
-    background: transparent;
-    z-index: 999;
+html{
+    scroll-behavior:smooth;
 }
 
-/* Scroll Effect */
-.navbar.scrolled {
-  background:rgba(200,161,101,.12);
-    backdrop-filter:blur(18px);
+body{
+    font-family:"Poppins",sans-serif;
+    background:#f8f8f8;
+}
+
+/* ==========================================
+            NAVBAR
+========================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    transition:.45s ease;
+
+    background:transparent;
+
+}
+
+/* ==========================================
+        Navbar On Scroll
+========================================== */
+
+.navbar.scrolled{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
     border-bottom:1px solid rgba(200,161,101,.25);
-}
 
-.navbar.scrolled .consult-btn {
-    color: #222;
-    border-color: #C8A165;
-}
-
-.navbar.scrolled .nav-links li a {
-    color: #222;
-}
-
-.navbar.scrolled .nav-links li a:hover {
-    color: #A67C2D;
-}
-
-/* Container */
-.nav-container {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
-    height: 100px;
-    padding: 12px 0;   /* Adds space above and below */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Logo */
-
-
-  .logo img {
-    height: 160px;
-    width: 180px;
-    object-fit: contain;
-    transition: 0.3s ease;
-}
-
-@media (max-width:768px) {
-    .logo img {
-        height: 70px;
-    }
-}
-
-
-.logo img:hover {
-  transform: scale(1.05);
-}
-
-/* Navigation Links */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 35px;
-}
-
-.nav-links li {
-  position: relative;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-/* Underline Animation */
-.nav-links li::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: #c8a165;
-  left: 0;
-  bottom: -6px;
-  transition: 0.4s;
-}
-
-.nav-links li:hover::after {
-  width: 100%;
-}
-
-.nav-links li a:hover {
-  color: #c8a165;
-}
-
-/* CTA Button */
-.consult-btn {
-  padding: 12px 26px;
-  border: 2px solid #c8a165;
-  background: transparent;
-  color: #ffffff;
-  border-radius: 30px;
-  cursor: pointer;
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  transition: 0.4s;
-}
-
-.consult-btn:hover {
-  background: #c8a165;
-  color: #111111;
-  transform: translateY(-2px);
-}
-
-/* Mobile Menu Icon */
-.menu-icon {
-  display: none;
-  font-size: 28px;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-/* ===========================
-   Responsive
-=========================== */
-
-@media (max-width: 992px) {
-
-  .consult-btn {
-    display: none;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 85px;
-    left: -100%;
-    width: 100%;
-    background: #111111;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    padding: 35px 0;
-    transition: 0.4s ease;
-  }
-
-  .nav-links.active {
-    left: 0;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links li::after {
-    display: none;
-  }
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
 }
 
-@media (max-width: 768px) {
+/* ==========================================
+        Container
+========================================== */
 
-  .nav-container {
-    height: 75px;
-  }
+.nav-container{
 
-  .logo img {
-    height: 50px;
-  }
+    width:92%;
 
-  .menu-icon {
-    font-size: 24px;
-  }
+    max-width:1450px;
 
-}
+    margin:auto;
 
-@media (max-width: 480px) {
+    height:130px;
 
-  .nav-container {
-    width: 92%;
-  }
+    display:flex;
 
-  .logo img {
-    height: 45px;
-  }
+    align-items:center;
 
-  .nav-links li a {
-    font-size: 15px;
-  }
+    justify-content:space-between;
 
 }
 
+/* ==========================================
+            LOGO
+========================================== */
 
-.mega-menu.show {
-    opacity: 1;
-    visibility: visible;
-}
-.mega-menu {
-    position: fixed;
-    top: 95px;
-    left: 50%;
-    transform: translateX(-50%) translateY(15px);
+.logo{
 
-    width: min(1250px, 92%);
-    min-height: 360px;
+    display:flex;
 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
+    align-items:center;
 
-    padding: 45px 55px;
-
-    background: rgba(18, 18, 18, 0.45);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    border: 1px solid rgba(200,161,101,.25);
-    border-radius: 20px;
-
-    box-shadow: 0 25px 50px rgba(0,0,0,.35);
-
-    opacity: 0;
-    visibility: hidden;
-    transition: .35s ease;
 }
 
-.mega-column h4{
-    font-family: "Playfair Display", serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #C8A165;
+.logo img{
 
-    margin-bottom: 22px;
-    padding-bottom: 12px;
+    height:190px;
 
-    border-bottom: 1px solid rgba(200,161,101,.35);
+    width:auto;
+
+    max-width:280px;
+
+    object-fit:contain;
+
+    transition:.4s ease;
+
+    cursor:pointer;
+
 }
+
+.logo img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* Logo becomes slightly smaller on scroll */
+
+.navbar.scrolled .logo img{
+
+    height:155px;
+
+}
+
+/* ==========================================
+      Navbar Text Color on Scroll
+========================================== */
+
+.navbar.scrolled .nav-links li>a{
+
+    color:#2a2a2a;
+
+}
+
+.navbar.scrolled .nav-links li>a:hover{
+
+    color:#C8A165;
+
+}
+
+/* ==========================================
+        CTA Button
+========================================== */
+
+.consult-btn{
+
+    padding:14px 30px;
+
+    border:2px solid #C8A165;
+
+    background:transparent;
+
+    color:#ffffff;
+
+    border-radius:50px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+}
+
+.consult-btn:hover{
+
+    background:#C8A165;
+
+    color:#111;
+
+    transform:translateY(-3px);
+
+}
+
+.navbar.scrolled .consult-btn{
+
+    color:#222;
+
+    border-color:#C8A165;
+
+}
+
+/* ==========================================
+        Mobile Icon
+========================================== */
+
+.menu-icon{
+
+    display:none;
+
+    font-size:30px;
+
+    color:#ffffff;
+
+    cursor:pointer;
+
+}
+
+.navbar.scrolled .menu-icon{
+
+    color:#222;
+
+}
+
+/* ==========================================
+            Navigation Links
+========================================== */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:38px;
+    list-style:none;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links li>a{
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    letter-spacing:.3px;
+
+    transition:.35s ease;
+
+    padding:10px 0;
+
+}
+
+.nav-links li>a:hover{
+
+    color:#C8A165;
+
+}
+
+/* Gold Underline */
+
+.nav-links li::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#C8A165;
+
+    transition:.35s;
+
+}
+
+.nav-links li:hover::after{
+
+    width:100%;
+
+}
+
+/* ==========================================
+        Dropdown Icon
+========================================== */
+
+.down-icon{
+
+    font-size:11px;
+
+    transition:.35s ease;
+
+}
+
+.mega-parent:hover .down-icon{
+
+    transform:rotate(180deg);
+
+}
+
+/* ==========================================
+            Mega Menu
+========================================== */
+
+.mega-parent{
+    position:static;
+}
+
+.mega-menu{
+
+    position:fixed;
+
+    top:120px;
+
+    left:50%;
+
+    transform:translateX(-50%) translateY(20px);
+
+    width:min(1250px,92%);
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+    padding:35px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:24px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.25);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s ease;
+
+    z-index:9999;
+
+}
+
+/* Shine Effect */
+
+.mega-menu::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.15),
+        rgba(255,255,255,0)
+    );
+
+    pointer-events:none;
+
+}
+
+/* Show */
+
+.mega-menu.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(-50%) translateY(0);
+
+}
+
+/* ==========================================
+            Mega Columns
+========================================== */
 
 .mega-column{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:22px;
+
     display:flex;
+
     flex-direction:column;
-    justify-content:flex-start;
+
+    transition:.35s ease;
+
 }
+
+.mega-column:hover{
+
+    background:rgba(255,255,255,.10);
+
+    border-color:rgba(200,161,101,.35);
+
+    transform:translateY(-6px);
+
+}
+
+/* ==========================================
+            Heading
+========================================== */
+
+.mega-column h4{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:22px;
+
+    color:#C8A165;
+
+    margin-bottom:18px;
+
+    padding-bottom:12px;
+
+    border-bottom:1px solid rgba(200,161,101,.30);
+
+}
+
+/* ==========================================
+            Mega Links
+========================================== */
 
 .mega-column a{
 
     display:flex;
+
     align-items:center;
 
     text-decoration:none;
 
     color:#ffffff;
 
-    font-size:16px;
+    font-size:15px;
+
     font-weight:400;
 
-    padding:10px 0;
+    padding:9px 0;
 
-    transition:.3s;
+    transition:.3s ease;
 
-    letter-spacing:.4px;
 }
 
 .mega-column a::before{
@@ -291,13 +462,10 @@
 
     color:#C8A165;
 
-    margin-right:12px;
+    margin-right:10px;
 
     font-size:20px;
 
-    opacity:.7;
-
-    transition:.3s;
 }
 
 .mega-column a:hover{
@@ -310,22 +478,347 @@
 
 .mega-column a:hover::before{
 
-    opacity:1;
-
-    margin-right:18px;
+    margin-right:16px;
 
 }
 
-.mega-column{
+/* ==========================================
+            Divider
+========================================== */
+
+.mega-column:not(:last-child){
 
     border-right:1px solid rgba(255,255,255,.08);
 
-    padding-right:25px;
+}
+
+/* ==========================================
+            Responsive Design
+========================================== */
+
+/* ---------- Large Tablets ---------- */
+
+@media (max-width:1200px){
+
+    .nav-container{
+        width:95%;
+    }
+
+    .nav-links{
+        gap:25px;
+    }
+
+    .nav-links li a{
+        font-size:15px;
+    }
+
+    .logo img{
+        height:170px;
+    }
+
+    .consult-btn{
+        padding:12px 22px;
+        font-size:14px;
+    }
+
+    .mega-menu{
+
+        width:95%;
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:25px;
+
+        padding:30px;
+
+    }
 
 }
 
-.mega-column:last-child{
+/* ---------- Tablets ---------- */
 
-    border:none;
+@media (max-width:992px){
+
+    .nav-container{
+
+        height:100px;
+
+    }
+
+    .logo img{
+
+        height:120px;
+
+        max-width:180px;
+
+    }
+
+    .consult-btn{
+
+        display:none;
+
+    }
+
+    .menu-icon{
+
+        display:block;
+
+        font-size:28px;
+
+        color:#fff;
+
+        z-index:10001;
+
+    }
+
+    .navbar.scrolled .menu-icon{
+
+        color:#222;
+
+    }
+
+    .nav-links{
+
+        position:fixed;
+
+        top:100px;
+
+        left:-100%;
+
+        width:100%;
+
+        height:calc(100vh - 100px);
+
+        background:rgba(18,18,18,.95);
+
+        backdrop-filter:blur(25px);
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:flex-start;
+
+        align-items:flex-start;
+
+        padding:40px;
+
+        gap:20px;
+
+        transition:.4s ease;
+
+        overflow-y:auto;
+
+    }
+
+    .nav-links.active{
+
+        left:0;
+
+    }
+
+    .nav-links li{
+
+        width:100%;
+
+    }
+
+    .nav-links li a{
+
+        color:#fff;
+
+        width:100%;
+
+        justify-content:space-between;
+
+        font-size:17px;
+
+        padding:14px 0;
+
+        border-bottom:1px solid rgba(255,255,255,.08);
+
+    }
+
+    .nav-links li::after{
+
+        display:none;
+
+    }
+
+    /* Mega Menu on Tablet */
+
+    .mega-menu{
+
+        position:relative;
+
+        top:10px;
+
+        left:0;
+
+        transform:none;
+
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        padding:20px;
+
+        gap:20px;
+
+        background:rgba(255,255,255,.06);
+
+        border-radius:16px;
+
+        margin-top:15px;
+
+        min-height:auto;
+
+    }
+
+    .mega-column{
+
+        padding:18px;
+
+    }
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+    .nav-container{
+
+        height:90px;
+
+    }
+
+    .logo img{
+
+        height:95px;
+
+        max-width:150px;
+
+    }
+
+    .menu-icon{
+
+        font-size:26px;
+
+    }
+
+    .nav-links{
+
+        top:90px;
+
+        height:calc(100vh - 90px);
+
+        padding:25px;
+
+    }
+
+    .mega-column h4{
+
+        font-size:18px;
+
+    }
+
+    .mega-column a{
+
+        font-size:14px;
+
+    }
+
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:480px){
+
+    .nav-container{
+
+        width:94%;
+
+        height:80px;
+
+    }
+
+    .logo img{
+
+        height:80px;
+
+        max-width:130px;
+
+    }
+
+    .menu-icon{
+
+        font-size:24px;
+
+    }
+
+    .nav-links{
+
+        padding:20px;
+
+    }
+
+    .nav-links li a{
+
+        font-size:15px;
+
+    }
+
+    .mega-menu{
+
+        padding:15px;
+
+    }
+
+    .mega-column{
+
+        padding:15px;
+
+    }
+
+    .mega-column h4{
+
+        font-size:17px;
+
+    }
+
+    .mega-column a{
+
+        font-size:13px;
+
+    }
+
+}
+
+/* ---------- Extra Small Devices ---------- */
+
+@media (max-width:360px){
+
+    .logo img{
+
+        height:70px;
+
+        max-width:115px;
+
+    }
+
+    .nav-container{
+
+        height:75px;
+
+    }
+
+    .menu-icon{
+
+        font-size:22px;
+
+    }
 
 }
