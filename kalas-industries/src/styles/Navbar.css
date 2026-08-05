@@ -348,59 +348,76 @@ body{
         MEGA MENU
 ========================================== */
 
+/* ==========================================
+        MEGA MENU
+========================================== */
+
 .mega-parent{
-
-    position:static;
-
+    position: static;
 }
+
+/* Desktop Mega Menu */
 
 .mega-menu{
 
-    position: static !important;
+    position:fixed;
 
-    width: 100% !important;
+    top:120px;
+    left:50%;
 
-    left: 0 !important;
-    top: 0 !important;
+    transform:translateX(-50%) translateY(20px);
 
-    transform: none !important;
+    width:min(1300px,92%);
 
-    display: none;
+    display:grid;
 
-    grid-template-columns: 1fr;
+    grid-template-columns:repeat(4,minmax(220px,1fr));
 
-    gap: 12px;
+    gap:30px;
 
-    margin-top: 10px;
+    padding:35px;
 
-    padding: 15px;
+    background:rgba(255,255,255,.12);
 
-    background: rgba(255,255,255,.08);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
 
-    backdrop-filter: blur(15px);
+    border:1px solid rgba(255,255,255,.18);
 
-    -webkit-backdrop-filter: blur(15px);
+    border-radius:24px;
 
-    border: 1px solid rgba(255,255,255,.12);
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.22);
 
-    border-radius: 15px;
+    opacity:0;
 
-    box-shadow: none;
+    visibility:hidden;
 
-    opacity: 1;
+    pointer-events:none;
 
-    visibility: visible;
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        visibility .35s;
 
-    min-height: auto;
+    z-index:999;
 }
+
+/* Show Menu */
 
 .mega-menu.show{
 
-    display: grid;
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+    transform:translateX(-50%) translateY(0);
 
 }
 
-/* Premium Glass Shine */
+/* Glass Shine */
 
 .mega-menu::before{
 
@@ -414,7 +431,7 @@ body{
 
     background:linear-gradient(
         135deg,
-        rgba(255,255,255,.18),
+        rgba(255,255,255,.15),
         rgba(255,255,255,0)
     );
 
@@ -423,30 +440,24 @@ body{
 }
 
 /* ==========================================
-        MEGA COLUMNS
+        MEGA COLUMN
 ========================================== */
 
 .mega-column{
 
-    width:100%;
+    display:flex;
 
-    padding:15px;
+    flex-direction:column;
 
-    border:none;
+    padding:5px 18px;
 
-    background:rgba(255,255,255,.05);
-
-    border-radius:12px;
+    border-right:1px solid rgba(255,255,255,.10);
 
 }
 
-.mega-column:hover{
+.mega-column:last-child{
 
-    transform:translateY(-6px);
-
-    background:rgba(255,255,255,.12);
-
-    border-color:rgba(200,161,101,.30);
+    border-right:none;
 
 }
 
@@ -454,9 +465,17 @@ body{
 
 .mega-column h4{
 
-    font-size:18px;
+    font-family:"Playfair Display",serif;
 
-    margin-bottom:10px;
+    font-size:20px;
+
+    color:#C8A165;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+    letter-spacing:.4px;
 
 }
 
@@ -476,23 +495,43 @@ body{
 
     font-weight:400;
 
-    padding:10px 0;
+    padding:9px 0;
 
     transition:.3s ease;
 
 }
 
+/* Navbar Scrolled */
+
+.navbar.scrolled .mega-column a{
+
+    color:#222;
+
+}
+
+.navbar.scrolled .mega-column h4{
+
+    color:#C8A165;
+
+}
+
+/* Arrow */
+
 .mega-column a::before{
 
     content:"›";
 
-    color:#C8A165;
+    font-size:18px;
 
-    font-size:20px;
+        color:#C8A165;
 
     margin-right:12px;
 
+    transition:.3s;
+
 }
+
+/* Hover */
 
 .mega-column a:hover{
 
@@ -508,20 +547,6 @@ body{
 
 }
 
-.mega-column a{
-
-    font-size:14px;
-
-    padding:8px 0;
-
-}
-/* Divider */
-
-.mega-column:not(:last-child){
-
-    border-right:1px solid rgba(255,255,255,.08);
-
-}
 
 /* ==========================================
         RESPONSIVE DESIGN
@@ -554,58 +579,22 @@ body{
         padding:12px 22px;
         font-size:14px;
     }
-
     .mega-menu{
 
-        position:fixed;
+        width:95%;
 
-        top:120px;
-
-        left:50%;
-
-        transform:translateX(-50%) translateY(20px);
-
-        width:min(1280px,92%);
-
-        display:grid;
+        top:110px;
 
         grid-template-columns:repeat(4,1fr);
 
-        gap:28px;
+        gap:25px;
 
-        padding:35px;
-
-        background:rgba(255,255,255,.10);
-
-        backdrop-filter:blur(25px);
-
-        -webkit-backdrop-filter:blur(25px);
-
-        border:1px solid rgba(255,255,255,.18);
-
-        border-radius:22px;
-
-        box-shadow:0 25px 60px rgba(0,0,0,.25);
-
-        opacity:0;
-
-        visibility:hidden;
-
-        transition:.35s;
+        padding:30px;
 
     }
-     .mega-menu.show{
 
-        opacity:1;
-
-        visibility:visible;
-
-        transform:translateX(-50%) translateY(0);
-
-    }
 
 }
-
 
 /* ---------- Tablet ---------- */
 
@@ -709,76 +698,63 @@ body{
 
     /* Mobile Accordion */
 
-    .mega-menu{
+    /* Mobile / Tablet Mega Menu */
 
-        position:relative;
+.mega-menu{
 
-        top:0;
-        left:0;
+    position:relative !important;
 
-        transform:none;
+    top:0 !important;
+    left:0 !important;
+    right:auto !important;
 
-        width:100%;
+    width:100% !important;
 
-        display:none;
+    transform:none !important;
 
-        grid-template-columns:2fr;
+    margin-top:12px;
 
-        gap:15px;
+    display:none;
 
-        margin-top:10px;
+    grid-template-columns:repeat(2,1fr);
 
-        padding:15px;
+    gap:16px;
 
-        background:rgba(255,255,255,.05);
+    padding:16px;
 
-        backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.05);
 
-        border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
 
-        border-radius:16px;
+    border-radius:16px;
 
-        opacity:1;
+    opacity:1 !important;
 
-        visibility:visible;
+    visibility:visible !important;
 
-        box-shadow:none;
+    pointer-events:auto;
 
-        min-height:auto;
+    box-shadow:none;
 
-    }
+}
 
-    .mega-menu.show{
+.mega-menu.show{
 
-        display:grid;
+    display:grid;
 
-    }
+}
+
+    
 
     .mega-column{
 
-        padding:18px;
+        border-right:none;
 
-        border:none;
+        padding:18px;
 
         background:rgba(255,255,255,.04);
 
-        border-radius:14px;
-
-    }
-
-    .mega-column h4{
-
-        font-size:18px;
-
-        margin-bottom:10px;
-
-    }
-
-    .mega-column a{
-
-        font-size:14px;
-
-        padding:8px 0;
+        border-radius:12px;
 
     }
 
@@ -849,9 +825,11 @@ body{
 
     .mega-menu{
 
-        padding:12px;
+        grid-template-columns:1fr;
 
-        gap:12px;
+        gap:15px;
+
+        padding:15px;
 
     }
 
@@ -863,7 +841,7 @@ body{
 
     .mega-column h4{
 
-        font-size:17px;
+        font-size:18px;
 
     }
 
@@ -932,9 +910,11 @@ body{
 
     }
 
-    .mega-menu{
+   .mega-menu{
 
-        padding:10px;
+        padding:12px;
+
+        gap:12px;
 
     }
 
@@ -946,7 +926,7 @@ body{
 
     .mega-column h4{
 
-        font-size:16px;
+        font-size:17px;
 
     }
 
@@ -954,7 +934,7 @@ body{
 
         font-size:13px;
 
-        padding:6px 0;
+        padding:7px 0;
 
     }
 

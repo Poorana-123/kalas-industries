@@ -27,7 +27,7 @@ const menuData = [
         ],
       },
       {
-        heading: "Living",
+        heading: "Living Room",
         links: [
           "TV Units",
           "Display Units",
@@ -38,105 +38,187 @@ const menuData = [
       {
         heading: "Kitchen",
         links: [
-          "Modern Kitchen",
-          "Luxury Kitchen",
+          "Straight Kitchen",
+          "L-Shaped Kitchen",
+          "U-Shaped Kitchen",
           "Island Kitchen",
-          "Utility Units",
         ],
       },
       {
-        heading: "More",
+        heading: "Furniture",
         links: [
+          "Bedroom Furniture",
           "Office Furniture",
-          "Bedroom Interiors",
-          "Dining Units",
-          "Custom Designs",
+          "Study Tables",
+          "Custom Interiors",
         ],
       },
     ],
   },
 
   {
-    title: "Solutions",
-    section: "solutions",
+    title: "Materials",
+    section: "materials",
     columns: [
       {
-        heading: "Wardrobe Solutions",
+        heading: "Boards",
         links: [
-          "Sliding Wardrobes",
-          "Openable Wardrobes",
-          "Walk-in Wardrobes",
-          "Corner Wardrobes",
+          "HDHMR",
+          "Marine Plywood",
+          "MDF",
+          "Particle Board",
         ],
       },
       {
-        heading: "Kitchen Solutions",
+        heading: "Finishes",
         links: [
-          "Modular Kitchens",
-          "Pantry Units",
-          "Utility Storage",
-          "Kitchen Accessories",
-        ],
-      },
-      {
-        heading: "Living Spaces",
-        links: [
-          "TV Units",
-          "Room Partitions",
-          "Display Units",
-          "Crockery Units",
-        ],
-      },
-      {
-        heading: "Office Solutions",
-        links: [
-          "Executive Cabinets",
-          "Workstations",
-          "Storage Systems",
-          "Conference Furniture",
-        ],
-      },
-    ],
-  },
-
-  {
-    title: "Craftsmanship",
-    section: "craftsmanship",
-    columns: [
-      {
-        heading: "Materials",
-        links: [
-          "Premium Boards",
-          "Laminates",
-          "Glass Finishes",
-          "Acrylic Panels",
+          "Laminate",
+          "Acrylic",
+          "PU Finish",
+          "Glass Finish",
         ],
       },
       {
         heading: "Hardware",
         links: [
           "Soft Close Hinges",
-          "Drawer Systems",
-          "Sliding Mechanisms",
-          "Handles",
+          "Tandem Drawers",
+          "Sliding Systems",
+          "Lift-Up Mechanisms",
         ],
       },
       {
-        heading: "Quality",
+        heading: "Accessories",
         links: [
-          "Quality Inspection",
-          "Warranty",
-          "Testing",
-          "Precision",
+          "Wardrobe Accessories",
+          "Kitchen Accessories",
+          "Lighting",
+          "Handles",
+        ],
+      },
+    ],
+  },
+
+  {
+    title: "Features",
+    section: "features",
+    columns: [
+      {
+        heading: "Performance",
+        links: [
+          "Soft Close",
+          "Scratch Resistant",
+          "Moisture Resistant",
+          "Termite Resistant",
+        ],
+      },
+      {
+        heading: "Design",
+        links: [
+          "Custom Sizes",
+          "Modern Finishes",
+          "Premium Colours",
+          "Glass Doors",
         ],
       },
       {
         heading: "Technology",
         links: [
-          "German Machines",
-          "CNC Process",
-          "Automation",
+          "German Hardware",
+          "Precision Manufacturing",
+          "CNC Cutting",
+          "Edge Banding",
+        ],
+      },
+      {
+        heading: "Benefits",
+        links: [
+          "Easy Maintenance",
+          "Long Life",
           "Eco Friendly",
+          "Warranty",
+        ],
+      },
+    ],
+  },
+
+  {
+    title: "Projects",
+    section: "projects",
+    columns: [
+      {
+        heading: "Residential",
+        links: [
+          "Apartments",
+          "Independent Houses",
+          "Luxury Villas",
+        ],
+      },
+      {
+        heading: "Commercial",
+        links: [
+          "Office Interiors",
+          "Retail Stores",
+          "Workspaces",
+        ],
+      },
+      {
+        heading: "Showcase",
+        links: [
+          "Before & After",
+          "Completed Projects",
+          "Customer Stories",
+        ],
+      },
+      {
+        heading: "Resources",
+        links: [
+          "Case Studies",
+          "Design Ideas",
+          "Testimonials",
+        ],
+      },
+    ],
+  },
+
+  {
+    title: "Gallery",
+    section: "gallery",
+    columns: [
+      {
+        heading: "Wardrobes",
+        links: [
+          "Sliding",
+          "Openable",
+          "Walk-in",
+          "Glass",
+        ],
+      },
+      {
+        heading: "Kitchen",
+        links: [
+          "Modern",
+          "Luxury",
+          "Compact",
+          "Island",
+        ],
+      },
+      {
+        heading: "Living",
+        links: [
+          "TV Units",
+          "Crockery",
+          "Display Units",
+          "Bookshelves",
+        ],
+      },
+      {
+        heading: "More",
+        links: [
+          "Bedroom",
+          "Office",
+          "Dining",
+          "Custom",
         ],
       },
     ],
@@ -165,9 +247,9 @@ const menuData = [
       {
         heading: "Resources",
         links: [
-          "Brochures",
           "Catalogues",
           "Material Samples",
+          "Design Guide",
         ],
       },
       {
@@ -196,9 +278,9 @@ const menuData = [
       {
         heading: "Sales",
         links: [
+          "Request Quote",
           "Book Consultation",
           "Dealer Enquiry",
-          "Request Quote",
         ],
       },
       {
@@ -221,92 +303,72 @@ const menuData = [
   },
 ];
 
+/* =====================================
+        COMPONENT
+===================================== */
+
 const Navbar = () => {
-
   const [menuOpen, setMenuOpen] = useState(false);
-
   const [scrolled, setScrolled] = useState(false);
-
   const [megaMenu, setMegaMenu] = useState(null);
-
   const [isMobile, setIsMobile] = useState(
     window.innerWidth <= 992
   );
 
   /* Scroll Effect */
-
   useEffect(() => {
-
     const handleScroll = () => {
-
       setScrolled(window.scrollY > 50);
-
     };
 
     window.addEventListener("scroll", handleScroll);
 
     return () =>
       window.removeEventListener("scroll", handleScroll);
-
   }, []);
 
   /* Detect Mobile */
-
   useEffect(() => {
-
     const handleResize = () => {
-
       setIsMobile(window.innerWidth <= 992);
 
       if (window.innerWidth > 992) {
-
         setMenuOpen(false);
-
       }
-
     };
 
     window.addEventListener("resize", handleResize);
 
     return () =>
       window.removeEventListener("resize", handleResize);
-
   }, []);
 
-  /* Toggle Mobile Mega Menu */
-
   const toggleMegaMenu = (index) => {
-
     if (megaMenu === index) {
-
       setMegaMenu(null);
-
     } else {
-
       setMegaMenu(index);
-
     }
-
   };
+
     return (
     <header className={scrolled ? "navbar scrolled" : "navbar"}>
       <div className="nav-container">
 
-        {/* Logo */}
+        {/* ================= Logo ================= */}
         <div className="logo">
-  <div className="logo-floating">
-    
-      <img src={logo} alt="Kala's Industries" />
-  </div>
-</div>
+          <div className="logo-floating">
+            <img src={logo} alt="Kala's Industries" />
+          </div>
+        </div>
 
-        {/* Navigation */}
+        {/* ================= Navigation ================= */}
         <ul className={menuOpen ? "nav-links active" : "nav-links"}>
 
           {menuData.map((menu, index) => (
 
             <li
-              key={index}
+              key={menu.title}
               className="mega-parent"
 
               onMouseEnter={() => {
@@ -322,6 +384,7 @@ const Navbar = () => {
               }}
             >
 
+              {/* Menu Title */}
               <a
                 href={`#${menu.section}`}
                 onClick={(e) => {
@@ -351,26 +414,28 @@ const Navbar = () => {
 
               </a>
 
+              {/* ================= Mega Menu ================= */}
+
               <div
                 className={`mega-menu ${
                   megaMenu === index ? "show" : ""
                 }`}
               >
 
-                {menu.columns.map((column, i) => (
+                {menu.columns.map((column) => (
 
                   <div
                     className="mega-column"
-                    key={i}
+                    key={column.heading}
                   >
 
                     <h4>{column.heading}</h4>
 
-                    {column.links.map((link, j) => (
+                    {column.links.map((link) => (
 
                       <a
                         href="#"
-                        key={j}
+                        key={link}
                         onClick={() => {
                           setMenuOpen(false);
                           setMegaMenu(null);
@@ -393,12 +458,14 @@ const Navbar = () => {
 
         </ul>
 
-        {/* CTA Button */}
+        {/* ================= CTA Button ================= */}
+
         <button className="consult-btn">
           Book Consultation
         </button>
 
-        {/* Mobile Menu Icon */}
+        {/* ================= Mobile Menu Icon ================= */}
+
         <div
           className="menu-icon"
           onClick={() => {
