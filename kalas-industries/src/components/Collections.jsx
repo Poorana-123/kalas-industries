@@ -1,11 +1,11 @@
 import "../styles/Collection.css";
 
-import wardrobe from "../assets/hero6.webp";
-import kitchen from "../assets/hero6.webp";
-import living from "../assets/hero6.webp";
-import office from "../assets/hero6.webp";
-import bedroom from "../assets/hero6.webp";
-import custom from "../assets/hero6.webp";
+import wardrobe from "../assets/wadrobe.avif";
+import kitchen from "../assets/modular_kitchen.avif";
+import living from "../assets/livingroom.avif";
+import office from "../assets/office_furnitures.avif";
+import bedroom from "../assets/bedroom_furniture.avif";
+import custom from "../assets/TV_units.avif";
 
 
 const collections = [

@@ -2,10 +2,10 @@ import { useState } from "react";
 import "../styles/Solutions.css";
 
 
-import wardrobe from "../assets/hero2.avif";
-import kitchen from "../assets/hero2.avif";
+import wardrobe from "../assets/hero6.webp";
+import kitchen from "../assets/kitchen2.avif";
 import living from "../assets/hero2.avif";
-import office from "../assets/hero2.avif";
+import office from "../assets/office2.avif";
 
 
 
