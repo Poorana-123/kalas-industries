@@ -1,9 +1,13 @@
 import { useState } from "react";
 import "../../styles/ProductExplorer.css";
-import previewImage from "../../assets/hero3.avif";
-import heroImage from "../../assets/hero3.avif";
+import { categoryData } from "../ProductExplorer/CategoryData";
 
-const ImageSection = () => {
+const ImageSection = ({ activeCategory }) => {
+
+  const selectedCategory =
+    categoryData.find(
+      (item) => item.title === activeCategory
+    ) || categoryData[0];
 
   const [zoomStyle, setZoomStyle] = useState({
     transform: "scale(1)",
@@ -19,7 +23,7 @@ const ImageSection = () => {
     const y = ((e.clientY - top) / height) * 100;
 
     setZoomStyle({
-      transform: "scale(1.8)",
+      transform: "scale(1.4)",
       transformOrigin: `${x}% ${y}%`,
     });
 
@@ -38,7 +42,7 @@ const ImageSection = () => {
 
     <div className="explorer-content">
 
-      {/* LEFT IMAGE */}
+      {/* LEFT PREVIEW */}
 
       <div
         className="preview-section"
@@ -47,24 +51,24 @@ const ImageSection = () => {
       >
 
         <img
-          src={previewImage}
-          alt="Preview"
+          src={selectedCategory.previewImage}
+          alt={selectedCategory.title}
           className="preview-image"
         />
 
       </div>
 
-      {/* RIGHT IMAGE */}
+      {/* RIGHT HERO */}
 
       <div className="hero-section">
 
         <div className="image-tag">
-          Premium Collection
+          {selectedCategory.title}
         </div>
 
         <img
-          src={heroImage}
-          alt="Hero"
+          src={selectedCategory.heroImage}
+          alt={selectedCategory.title}
           className="hero-image"
           style={zoomStyle}
         />

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../../styles/ProductExplorer.css";
 
 const categories = [
@@ -16,31 +15,23 @@ const categories = [
   "More",
 ];
 
-const CategoryBar = () => {
-  const [active, setActive] = useState("Wardrobes");
-
+const CategoryBar = ({ activeCategory, setActiveCategory }) => {
   return (
     <div className="category-bar">
-
       <div className="category-wrapper">
-
         {categories.map((category) => (
-
           <button
             key={category}
             className={`category-item ${
-              active === category ? "active" : ""
+              activeCategory === category ? "active" : ""
             }`}
-            onMouseEnter={() => setActive(category)}
-            onClick={() => setActive(category)}
+            onMouseEnter={() => setActiveCategory(category)}
+            onClick={() => setActiveCategory(category)}
           >
             {category}
           </button>
-
         ))}
-
       </div>
-
     </div>
   );
 };
