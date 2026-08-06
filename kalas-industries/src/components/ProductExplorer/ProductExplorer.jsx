@@ -24,8 +24,9 @@ const ProductExplorer = () => {
             />
 
             <CollectionSection
-                activeCategory={activeCategory}
-            />
+    key={activeCategory}
+    activeCategory={activeCategory}
+/>
 
         </section>
 
