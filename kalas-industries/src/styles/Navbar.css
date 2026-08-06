@@ -79,7 +79,11 @@ body{
 
     align-items:center;
 
-    justify-content:space-between;
+    justify-content:center;
+
+    flex:1;
+    
+    gap:34px;
 
 }
 
@@ -93,7 +97,9 @@ body{
 
     align-items:center;
 
-    justify-content:center;
+     flex:0 0 180px;
+
+    justify-content:flex-start;
 
     position:relative;
 
@@ -348,10 +354,6 @@ body{
         MEGA MENU
 ========================================== */
 
-/* ==========================================
-        MEGA MENU
-========================================== */
-
 .mega-parent{
     position: static;
 }
@@ -503,11 +505,29 @@ body{
 
 /* Navbar Scrolled */
 
+/* ==========================================
+        SCROLLED MEGA MENU
+========================================== */
+
+.navbar.scrolled .mega-menu{
+
+    background: rgba(255,255,255,.92);
+
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    border:1px solid rgba(200,161,101,.25);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+
+}
+
 .navbar.scrolled .mega-column a{
 
     color:#222;
 
 }
+
 
 .navbar.scrolled .mega-column h4{
 

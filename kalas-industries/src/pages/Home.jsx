@@ -6,6 +6,7 @@ import Solutions from "../components/Solutions";
 import Craftsmanship from "../components/Craftsmanship";
 import ExperienceCentre from "../components/ExperienceCentre";
 import Footer from "../components/Footer";
+import ProductExplorer from "../components/ProductExplorer/ProductExplorer";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
+      <ProductExplorer />
       <About />
       <Collections />
       <Solutions />

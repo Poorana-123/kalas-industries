@@ -1,0 +1,1171 @@
+/* ==========================================
+        GOOGLE FONTS
+========================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+
+/* ==========================================
+        PRODUCT EXPLORER
+========================================== */
+
+.product-explorer{
+
+    width:100%;
+
+    padding:90px 0;
+
+    background:#f8f8f8;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================
+        SECTION HEADER
+========================================== */
+
+.explorer-header{
+
+    width:90%;
+
+    max-width:1450px;
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.explorer-header h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:44px;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:12px;
+
+}
+
+.explorer-header p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:17px;
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+
+/* ==========================================
+        CATEGORY BAR
+========================================== */
+
+.category-bar{
+
+    width:100%;
+
+    background:#ffffff;
+
+    border-top:1px solid #ececec;
+
+    border-bottom:1px solid #ececec;
+
+    margin-bottom:45px;
+
+    position:sticky;
+
+    top:90px;
+
+    z-index:100;
+
+    transition:.35s ease;
+
+}
+
+
+/* Wrapper */
+
+.category-wrapper{
+
+    width:92%;
+
+    max-width:1450px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    gap:6px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+
+    -ms-overflow-style:none;
+
+    padding:15px 0;
+
+}
+
+.category-wrapper::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+
+/* Category Button */
+
+.category-item{
+
+    position:relative;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    padding:14px 22px;
+
+    color:#444;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    font-family:"Poppins",sans-serif;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+
+    border-radius:8px;
+
+    transition:all .3s ease;
+
+}
+
+
+/* Hover */
+
+.category-item:hover{
+
+    color:#C8A165;
+
+    background:#faf7f2;
+
+}
+
+
+/* Active */
+
+.category-item.active{
+
+    color:#C8A165;
+
+    background:#faf7f2;
+
+}
+
+
+/* Underline */
+
+.category-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:6px;
+
+    transform:translateX(-50%);
+
+    width:0;
+
+    height:3px;
+
+    background:#C8A165;
+
+    border-radius:20px;
+
+    transition:.35s ease;
+
+}
+
+.category-item:hover::after{
+
+    width:70%;
+
+}
+
+.category-item.active::after{
+
+    width:70%;
+
+}
+
+
+/* Premium Divider */
+
+.category-bar::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:1px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(200,161,101,.6),
+        transparent
+    );
+
+}
+
+/* ==========================================
+        IMAGE SHOWCASE SECTION
+========================================== */
+
+.explorer-content{
+
+    width:92%;
+    max-width:1450px;
+
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:320px 1fr;
+
+    gap:30px;
+
+    align-items:start;
+
+}
+
+
+/* ==========================================
+        LEFT PREVIEW PANEL
+========================================== */
+
+.preview-section{
+
+    position:relative;
+
+    width:100%;
+    height:400px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid #ececec;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:crosshair;
+
+    transition:.35s ease;
+
+}
+
+.preview-section:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.preview-image{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    transition:.4s;
+
+}
+
+.preview-section:hover .preview-image{
+
+    transform:scale(1.05);
+
+}
+
+
+/* ==========================================
+        RIGHT HERO PANEL
+========================================== */
+
+
+.hero-section:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+
+/* ==========================================
+        HERO IMAGE
+========================================== */
+
+.hero-section{
+
+    position:relative;
+
+    width:100%;
+    height:400px;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    border:1px solid #ececec;
+
+}
+
+.hero-image{
+
+    max-width:100%;
+
+    max-height:100%;
+
+    width:auto;
+
+    height:auto;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    display:block;
+
+}
+
+.hero-section:hover .hero-image{
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+/* ==========================================
+        PREMIUM LABEL
+========================================== */
+
+.image-tag{
+
+    position:absolute;
+
+    top:20px;
+
+    left:20px;
+
+    z-index:10;
+
+    background:#C8A165;
+
+    color:#fff;
+
+    padding:10px 18px;
+
+    border-radius:40px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================
+        GOLD BORDER
+========================================== */
+
+.preview-section::after,
+.hero-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:20px;
+
+    border:2px solid transparent;
+
+    transition:.35s ease;
+
+    pointer-events:none;
+
+}
+
+.preview-section:hover::after,
+.hero-section:hover::after{
+
+    border-color:rgba(200,161,101,.45);
+
+}
+
+
+/* ==========================================
+        RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    .explorer-content{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .preview-section,
+    .hero-section{
+
+        height:350px;
+
+    }
+
+    .preview-image,
+    .hero-image{
+
+        height:350px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .preview-section,
+    .hero-section{
+
+        height:280px;
+
+    }
+
+    .preview-image,
+    .hero-image{
+
+        height:280px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .preview-section,
+    .hero-section{
+
+        height:220px;
+
+    }
+
+    .preview-image,
+    .hero-image{
+
+        height:220px;
+
+    }
+
+}
+/* ==========================================
+        COLLECTION SECTION
+========================================== */
+
+.collection-section{
+
+    width:92%;
+
+    max-width:1450px;
+
+    margin:70px auto 0;
+
+}
+
+.collection-section h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:34px;
+
+    color:#222;
+
+    margin-bottom:30px;
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+.collection-section h3::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-10px;
+
+    width:70px;
+
+    height:3px;
+
+    background:#C8A165;
+
+    border-radius:20px;
+
+}
+
+
+/* ==========================================
+        COLLECTION GRID
+========================================== */
+
+.collection-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:25px;
+
+}
+
+
+/* ==========================================
+        COLLECTION CARD
+========================================== */
+
+.collection-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    cursor:pointer;
+
+    border:1px solid #ececec;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+
+    transition:all .35s ease;
+
+}
+
+.collection-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.12);
+
+    border-color:#C8A165;
+
+}
+
+
+/* ==========================================
+        COLLECTION IMAGE
+========================================== */
+
+.collection-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    transition:transform .45s ease;
+
+}
+
+.collection-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* ==========================================
+        IMAGE OVERLAY
+========================================== */
+
+.collection-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.45),
+        rgba(0,0,0,0)
+    );
+
+    opacity:0;
+
+    transition:.35s ease;
+
+    z-index:1;
+
+}
+
+.collection-card:hover::before{
+
+    opacity:1;
+
+}
+
+
+/* ==========================================
+        COLLECTION TITLE
+========================================== */
+
+.collection-card h4{
+
+    padding:18px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#333;
+
+    text-align:center;
+
+    transition:.3s ease;
+
+}
+
+.collection-card:hover h4{
+
+    color:#C8A165;
+
+}
+
+
+/* ==========================================
+        EXPLORE BUTTON
+========================================== */
+
+.collection-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin:18px;
+
+    padding:12px;
+
+    border:2px solid #C8A165;
+
+    border-radius:40px;
+
+    color:#C8A165;
+
+    background:transparent;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+}
+
+.collection-btn:hover{
+
+    background:#C8A165;
+
+    color:#ffffff;
+
+}
+
+
+/* ==========================================
+        PREMIUM SHINE
+========================================== */
+
+.collection-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-50%;
+
+    width:50%;
+
+    height:300%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:rotate(20deg);
+
+    transition:1.2s;
+
+}
+
+.collection-card:hover::after{
+
+    left:130%;
+
+}
+
+
+/* ==========================================
+        HORIZONTAL SLIDER (Future)
+========================================== */
+
+.collection-slider{
+
+    display:flex;
+
+    gap:20px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+
+    scroll-behavior:smooth;
+
+    padding-bottom:10px;
+
+}
+
+.collection-slider::-webkit-scrollbar{
+
+    display:none;
+
+}
+/* ==========================================
+        LARGE LAPTOP
+========================================== */
+
+@media (max-width:1200px){
+
+    .explorer-header h2{
+
+        font-size:38px;
+
+    }
+
+    .explorer-content{
+
+        grid-template-columns:280px 1fr;
+
+        gap:24px;
+
+    }
+
+    .preview-section{
+
+        min-height:520px;
+
+    }
+
+    .hero-section{
+
+        min-height:520px;
+
+    }
+
+    .collection-grid{
+
+        grid-template-columns:repeat(4,1fr);
+
+    }
+
+}
+
+
+/* ==========================================
+        TABLET
+========================================== */
+
+@media (max-width:992px){
+
+    .product-explorer{
+
+        padding:70px 0;
+
+    }
+
+    .category-bar{
+
+        top:80px;
+
+    }
+
+    .explorer-header h2{
+
+        font-size:34px;
+
+    }
+
+    .explorer-header p{
+
+        font-size:16px;
+
+    }
+
+    .explorer-content{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+    }
+
+    .preview-section{
+
+        min-height:300px;
+
+    }
+
+    .hero-section{
+
+        min-height:450px;
+
+    }
+
+    .collection-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/* ==========================================
+        MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .product-explorer{
+
+        padding:60px 0;
+
+    }
+
+    .category-bar{
+
+        top:72px;
+
+    }
+
+    .category-wrapper{
+
+        padding:12px 0;
+
+    }
+
+    .category-item{
+
+        font-size:14px;
+
+        padding:12px 18px;
+
+    }
+
+    .explorer-header{
+
+        margin-bottom:35px;
+
+    }
+
+    .explorer-header h2{
+
+        font-size:30px;
+
+    }
+
+    .explorer-header p{
+
+        font-size:15px;
+
+        line-height:1.7;
+
+    }
+
+    .preview-section{
+
+        min-height:220px;
+
+    }
+
+    .hero-section{
+
+        min-height:300px;
+
+    }
+
+    .collection-section{
+
+        margin-top:50px;
+
+    }
+
+    .collection-section h3{
+
+        font-size:28px;
+
+    }
+
+    .collection-grid{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+}
+
+
+/* ==========================================
+        SMALL MOBILE
+========================================== */
+
+@media (max-width:480px){
+
+    .explorer-header h2{
+
+        font-size:26px;
+
+    }
+
+    .explorer-header p{
+
+        font-size:14px;
+
+    }
+
+    .category-item{
+
+        font-size:13px;
+
+        padding:10px 15px;
+
+    }
+
+    .preview-section{
+
+        min-height:180px;
+
+        border-radius:16px;
+
+    }
+
+    .hero-section{
+
+        min-height:240px;
+
+        border-radius:16px;
+
+    }
+
+    .collection-card{
+
+        border-radius:16px;
+
+    }
+
+    .collection-card img{
+
+        height:180px;
+
+    }
+
+    .collection-card h4{
+
+        font-size:15px;
+
+        padding:15px;
+
+    }
+
+}
+
+
+/* ==========================================
+        EXTRA SMALL DEVICES
+========================================== */
+
+@media (max-width:360px){
+
+    .explorer-header h2{
+
+        font-size:22px;
+
+    }
+
+    .category-item{
+
+        padding:10px 12px;
+
+        font-size:12px;
+
+    }
+
+    .hero-section{
+
+        min-height:210px;
+
+    }
+
+    .preview-section{
+
+        min-height:160px;
+
+    }
+
+}
+
+
+/* ==========================================
+        SMOOTH SCROLLBAR
+========================================== */
+
+.category-wrapper::-webkit-scrollbar,
+
+.collection-slider::-webkit-scrollbar{
+
+    height:6px;
+
+}
+
+.category-wrapper::-webkit-scrollbar-thumb,
+
+.collection-slider::-webkit-scrollbar-thumb{
+
+    background:#C8A165;
+
+    border-radius:30px;
+
+}
+
+.category-wrapper::-webkit-scrollbar-track,
+
+.collection-slider::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+/* ==========================================
+        SELECTION
+========================================== */
+
+::selection{
+
+    background:#C8A165;
+
+    color:#ffffff;
+
+}
+
+
+/* ==========================================
+        SMOOTH TRANSITIONS
+========================================== */
+
+.category-item,
+
+.preview-section,
+
+.hero-section,
+
+.preview-image,
+
+.hero-image,
+
+.collection-card,
+
+.collection-card img,
+
+.collection-btn{
+
+    transition:all .35s ease;
+
+}
