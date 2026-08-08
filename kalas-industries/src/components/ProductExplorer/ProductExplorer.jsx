@@ -4,34 +4,84 @@ import { categoryData } from "./CategoryData";
 import CategoryBar from "./CategoryBar";
 import ImageSection from "./ImageSection";
 import CollectionSection from "./CollectionSection";
+import CollectionShowcase from "./CollectionShowcase";
 
 const ProductExplorer = () => {
 
-    const [activeCategory, setActiveCategory] =
-        useState(categoryData[0].title);
+  const [activeCategory, setActiveCategory] = useState("Wardrobes");
 
-    return (
+  const [selectedCollection, setSelectedCollection] = useState(null);
 
-        <section className="product-explorer">
 
-            <CategoryBar
-                activeCategory={activeCategory}
-                setActiveCategory={setActiveCategory}
-            />
-            
+  // Category change
+  const handleCategoryChange = (category) => {
 
-            <ImageSection
-                activeCategory={activeCategory}
-            />
+    setActiveCategory(category);
 
-            <CollectionSection
-    key={activeCategory}
-    activeCategory={activeCategory}
-/>
+    // Close old showcase
+    setSelectedCollection(null);
 
-        </section>
+  };
 
-    );
+
+  // Collection click
+  const handleCollectionClick = (collection) => {
+
+    console.log("Collection clicked:", collection.name);
+
+    setSelectedCollection(collection);
+
+  };
+
+
+  return (
+
+    <section className="product-explorer">
+
+      {/* =====================================
+          CATEGORY BAR
+      ===================================== */}
+
+      <CategoryBar
+        activeCategory={activeCategory}
+        setActiveCategory={handleCategoryChange}
+      />
+
+
+      {/* =====================================
+          MAIN IMAGE SECTION
+      ===================================== */}
+
+      <ImageSection
+        activeCategory={activeCategory}
+      />
+
+
+      {/* =====================================
+          FIVE COLLECTION CARDS
+      ===================================== */}
+
+      <CollectionSection
+        activeCategory={activeCategory}
+        setSelectedCollection={handleCollectionClick}
+      />
+
+
+      {/* =====================================
+          COLLECTION SHOWCASE
+      ===================================== */}
+
+      {selectedCollection && (
+
+        <CollectionShowcase
+          collection={selectedCollection}
+        />
+
+      )}
+
+    </section>
+
+  );
 
 };
 

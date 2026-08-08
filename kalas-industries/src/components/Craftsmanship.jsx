@@ -4,140 +4,282 @@ import {
   FaLayerGroup,
   FaCogs,
   FaIndustry,
-  FaCheckCircle
+  FaCheckCircle,
+  FaArrowRight,
 } from "react-icons/fa";
 
+import craftsmanshipImage from "../assets/craftmenship.webp";
 
 const craftsmanshipData = [
 
   {
-    icon:<FaLayerGroup />,
-    title:"Premium Materials",
+    number: "01",
+
+    icon: <FaLayerGroup />,
+
+    title: "Premium Materials",
+
     description:
-    "We use carefully selected materials including premium boards, elegant laminates, acrylic finishes, and glass panels to create interiors with lasting beauty and durability."
+      "We carefully select premium boards, elegant laminates, acrylic finishes, glass panels and other materials to create interiors that combine beauty with durability.",
+
+    
   },
 
-
   {
-    icon:<FaCogs />,
-    title:"Advanced Hardware",
+    number: "02",
+
+    icon: <FaCogs />,
+
+    title: "Advanced Hardware",
+
     description:
-    "Our products are equipped with high-quality hardware solutions including soft-close hinges, smooth drawer systems, and premium accessories for effortless performance."
+      "Every piece is equipped with carefully selected hardware systems that provide smooth movement, effortless operation and dependable long-term performance.",
+
+   
   },
 
-
   {
-    icon:<FaIndustry />,
-    title:"Modern Technology",
+    number: "03",
+
+    icon: <FaIndustry />,
+
+    title: "Modern Technology",
+
     description:
-    "Combining advanced machinery, precision manufacturing, and innovative techniques to deliver accurate designs with exceptional finishing."
+      "Our manufacturing process combines advanced machinery, precision tools and modern production techniques to achieve accurate dimensions and exceptional finishing.",
+
+   
   },
 
-
   {
-    icon:<FaCheckCircle />,
-    title:"Quality Assurance",
+    number: "04",
+
+    icon: <FaCheckCircle />,
+
+    title: "Quality Assurance",
+
     description:
-    "Every product goes through strict quality checks to ensure superior craftsmanship, durability, and customer satisfaction."
-  }
+      "Every product passes through multiple quality checks. From materials and dimensions to finishing and functionality, every detail receives careful attention.",
+
+    
+  },
 
 ];
 
-
-
 const Craftsmanship = () => {
+  return (
+    <section className="craftsmanship" id="craftsmanship">
+
+      {/* =========================================
+          BACKGROUND
+      ========================================= */}
+
+      <div className="craft-background-circle"></div>
 
 
-return (
+      {/* =========================================
+          SECTION HEADER
+      ========================================= */}
 
-<section className="craftsmanship" id="craftsmanship">
+      <div className="craft-top">
 
+        <div className="craft-top-label">
+          OUR CRAFTSMANSHIP
+        </div>
 
-{/* Heading */}
+        <h2>
+          Where precision
+          <br />
+          becomes <strong>beautiful.</strong>
+        </h2>
 
-<div className="craft-heading">
+        <p>
+          Every Kala's Industries creation is carefully
+          developed through a combination of premium
+          materials, advanced technology and skilled
+          craftsmanship.
+        </p>
 
-
-<span>
-OUR CRAFTSMANSHIP
-</span>
-
-
-<h2>
-Precision, Quality &
-<strong>
-Innovation
-</strong>
-</h2>
-
-
-<p>
-Every Kala's Industries creation reflects our commitment
-towards premium materials, advanced technology, and
-exceptional craftsmanship.
-</p>
+      </div>
 
 
-</div>
+      {/* =========================================
+          MAIN CONTENT
+      ========================================= */}
+
+      <div className="craft-main">
 
 
+        {/* =====================================
+            IMAGE SIDE
+        ===================================== */}
+
+        <div className="craft-visual">
+
+          <div className="craft-image-wrapper">
+
+            <img
+              src={craftsmanshipImage}
+              alt="Kala's Industries craftsmanship"
+            />
+
+          </div>
 
 
+          {/* IMAGE OVERLAY */}
 
-{/* Cards */}
+          <div className="craft-image-overlay">
 
-<div className="craft-grid">
+            <span>
+              KALA'S INDUSTRIES
+            </span>
 
+            <strong>
+              Crafted for living.
+            </strong>
 
-{
-craftsmanshipData.map((item,index)=>(
-
-
-<div 
-className="craft-card"
-key={index}
->
-
-
-<div className="craft-icon">
-
-{item.icon}
-
-</div>
+          </div>
 
 
+          {/* EXPERIENCE NUMBER */}
 
-<h3>
-{item.title}
-</h3>
+          <div className="craft-experience">
 
+            <strong>
+              10+
+            </strong>
 
+            <span>
+              Years of
+              <br />
+              craftsmanship
+            </span>
 
-<p>
-{item.description}
-</p>
+          </div>
 
-
-
-</div>
-
-
-))
-}
-
+        </div>
 
 
-</div>
+        {/* =====================================
+            PROCESS SIDE
+        ===================================== */}
+
+        <div className="craft-process">
+
+          {craftsmanshipData.map((item, index) => (
+
+            <div
+              className={`craft-process-item ${
+                index === 0 ? "active" : ""
+              }`}
+              key={item.number}
+            >
+
+              {/* NUMBER */}
+
+              <div className="craft-number">
+                {item.number}
+              </div>
 
 
+              {/* ICON */}
+
+              <div className="craft-process-icon">
+                {item.icon}
+              </div>
 
 
-</section>
+              {/* CONTENT */}
 
-);
+              <div className="craft-process-content">
+
+                <h3>
+                  {item.title}
+                </h3>
+
+                <p>
+                  {item.description}
+                </p>
+
+              </div>
 
 
+              {/* ARROW */}
+
+              <div className="craft-arrow">
+                <FaArrowRight />
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+
+      {/* =========================================
+          BOTTOM STATS
+      ========================================= */}
+
+      <div className="craft-stats">
+
+        <div className="craft-stat">
+
+          <strong>
+            01
+          </strong>
+
+          <span>
+            MATERIAL
+          </span>
+
+        </div>
+
+
+        <div className="craft-stat">
+
+          <strong>
+            02
+          </strong>
+
+          <span>
+            PRECISION
+          </span>
+
+        </div>
+
+
+        <div className="craft-stat">
+
+          <strong>
+            03
+          </strong>
+
+          <span>
+            TECHNOLOGY
+          </span>
+
+        </div>
+
+
+        <div className="craft-stat">
+
+          <strong>
+            04
+          </strong>
+
+          <span>
+            QUALITY
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+  );
 };
-
 
 export default Craftsmanship;
