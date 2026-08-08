@@ -18,6 +18,7 @@ const ProductExplorer = () => {
                 activeCategory={activeCategory}
                 setActiveCategory={setActiveCategory}
             />
+            
 
             <ImageSection
                 activeCategory={activeCategory}

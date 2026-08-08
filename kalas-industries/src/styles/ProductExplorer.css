@@ -73,26 +73,22 @@
         CATEGORY BAR
 ========================================== */
 
-.category-bar{
+.category-bar {
 
     width:100%;
 
     background:#ffffff;
 
     border-top:1px solid #ececec;
-
     border-bottom:1px solid #ececec;
 
     margin-bottom:45px;
 
-    position:sticky;
+    position:relative;
 
-    top:90px;
-
-    z-index:100;
+    z-index:10;
 
     transition:.35s ease;
-
 }
 
 
