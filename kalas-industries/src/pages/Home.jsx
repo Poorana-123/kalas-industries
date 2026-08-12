@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import About from "../components/About";
+//import About from "../components/About";
 import Collections from "../components/Collections";
 import Solutions from "../components/Solutions";
 import Craftsmanship from "../components/Craftsmanship";
@@ -15,7 +15,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <ProductExplorer />
-      <About />
+      
       <Collections />
       <Solutions />
       <Craftsmanship />

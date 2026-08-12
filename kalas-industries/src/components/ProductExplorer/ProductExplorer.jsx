@@ -6,6 +6,7 @@ import ImageSection from "./ImageSection";
 import CollectionSection from "./CollectionSection";
 import CollectionShowcase from "./CollectionShowcase";
 import WardrobeSpecifications from "./WardrobeSpecifications";
+import WardrobeInsights from "./WardrobeInsights";
 
 const ProductExplorer = () => {
 
@@ -80,6 +81,8 @@ const ProductExplorer = () => {
 
       )}
       <WardrobeSpecifications />
+
+      <WardrobeInsights/>
 
     </section>
 
