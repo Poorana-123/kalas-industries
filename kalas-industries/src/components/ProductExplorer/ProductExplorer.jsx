@@ -5,6 +5,7 @@ import CategoryBar from "./CategoryBar";
 import ImageSection from "./ImageSection";
 import CollectionSection from "./CollectionSection";
 import CollectionShowcase from "./CollectionShowcase";
+import WardrobeSpecifications from "./WardrobeSpecifications";
 
 const ProductExplorer = () => {
 
@@ -78,6 +79,7 @@ const ProductExplorer = () => {
         />
 
       )}
+      <WardrobeSpecifications />
 
     </section>
 

@@ -1,0 +1,580 @@
+/* =====================================================
+   WARDROBE SPECIFICATIONS
+===================================================== */
+
+.wardrobe-specifications {
+
+    width: 92%;
+
+    max-width: 1450px;
+
+    margin: 100px auto;
+
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.specification-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.specification-label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #C8A165;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.specification-header h2 {
+
+    margin: 0;
+
+    color: #171717;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 32px;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   EXPLORE BUTTON
+===================================================== */
+
+.shop-specifications-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #171717;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.shop-specifications-btn span {
+
+    font-size: 22px;
+
+    transition: transform .3s ease;
+
+}
+
+
+.shop-specifications-btn:hover {
+
+    color: #C8A165;
+
+}
+
+
+.shop-specifications-btn:hover span {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.specification-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    border: 1px solid #dedede;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.specification-card {
+
+    position: relative;
+
+    min-height: 210px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 22px 15px;
+
+    background: #ffffff;
+
+    border-right: 1px solid #dedede;
+
+    border-bottom: 1px solid #dedede;
+
+    cursor: pointer;
+
+    transition: background .3s ease;
+
+}
+
+
+/* Remove right border from every 5th item */
+
+.specification-card:nth-child(5n) {
+
+    border-right: none;
+
+}
+
+
+/* Remove bottom border from last row */
+
+.specification-card:nth-child(n+6) {
+
+    border-bottom: none;
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.specification-card:hover,
+.specification-card.active {
+
+    background: #faf8f4;
+
+}
+
+
+/* =====================================================
+   IMAGE CIRCLE
+===================================================== */
+
+.specification-image-wrapper {
+
+    width: 105px;
+
+    height: 105px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 16px;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+
+    overflow: hidden;
+
+    transition:
+        transform .4s ease,
+        background .4s ease;
+
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.specification-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .45s ease,
+        opacity .3s ease;
+
+}
+
+
+/* =====================================================
+   HOVER IMAGE
+===================================================== */
+
+.specification-card:hover
+.specification-image-wrapper {
+
+    transform: scale(1.05);
+
+    background: #e9e2d8;
+
+}
+
+
+.specification-card:hover
+.specification-image {
+
+    transform: scale(1.12);
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.specification-card h3 {
+
+    margin: 0;
+
+    color: #222;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    text-align: center;
+
+    transition: color .3s ease;
+
+}
+
+
+.specification-card:hover h3,
+.specification-card.active h3 {
+
+    color: #C8A165;
+
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.specification-number {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 14px;
+
+    color: #bcbcbc;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.specification-card:hover
+.specification-number {
+
+    color: #C8A165;
+
+}
+
+
+/* =====================================================
+   GOLD LINE
+===================================================== */
+
+.specification-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 3px;
+
+    background: #C8A165;
+
+    transform: translateX(-50%);
+
+    transition: width .35s ease;
+
+}
+
+
+.specification-card:hover::after,
+.specification-card.active::after {
+
+    width: 45%;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .specification-grid {
+
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+
+
+    .specification-card:nth-child(5n) {
+
+        border-right: 1px solid #dedede;
+
+    }
+
+
+    .specification-card:nth-child(4n) {
+
+        border-right: none;
+
+    }
+
+
+    .specification-card:nth-child(n+5) {
+
+        border-bottom: 1px solid #dedede;
+
+    }
+
+
+    .specification-card:nth-child(n+9) {
+
+        border-bottom: none;
+
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .specification-grid {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+
+    .specification-card:nth-child(4n) {
+
+        border-right: 1px solid #dedede;
+
+    }
+
+
+    .specification-card:nth-child(3n) {
+
+        border-right: none;
+
+    }
+
+
+    .specification-card:nth-child(n+9) {
+
+        border-bottom: 1px solid #dedede;
+
+    }
+
+
+    .specification-card:nth-child(n+10) {
+
+        border-bottom: none;
+
+    }
+
+
+    .specification-header h2 {
+
+        font-size: 28px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .wardrobe-specifications {
+
+        width: 94%;
+
+        margin: 70px auto;
+
+    }
+
+
+    .specification-header {
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+    }
+
+
+    .specification-header h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .shop-specifications-btn {
+
+        font-size: 12px;
+
+    }
+
+
+    .specification-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .specification-card:nth-child(3n) {
+
+        border-right: 1px solid #dedede;
+
+    }
+
+
+    .specification-card:nth-child(2n) {
+
+        border-right: none;
+
+    }
+
+
+    .specification-card {
+
+        min-height: 190px;
+
+    }
+
+
+    .specification-image-wrapper {
+
+        width: 90px;
+
+        height: 90px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .specification-header {
+
+        flex-direction: column;
+
+    }
+
+
+    .shop-specifications-btn {
+
+        align-self: flex-start;
+
+    }
+
+
+    .specification-card {
+
+        min-height: 175px;
+
+        padding: 15px 8px;
+
+    }
+
+
+    .specification-image-wrapper {
+
+        width: 78px;
+
+        height: 78px;
+
+    }
+
+
+    .specification-card h3 {
+
+        font-size: 12px;
+
+    }
+
+}
