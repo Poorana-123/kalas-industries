@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Projects from "./components/Projects";
 import Gallery from "./components/Gallery";
 //import Experience from "./components/Experience";
-//import Contact from "./components/Contact";
+import Contact from "./components/Contact";
 
 
 function App() {
@@ -35,9 +35,10 @@ function App() {
           path="/gallery"
           element={<Gallery />}
         />
-
-        
-
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
       </Routes>
 
     </BrowserRouter>
