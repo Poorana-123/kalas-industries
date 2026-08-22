@@ -1,0 +1,1008 @@
+/* =====================================================
+   WARDROBE PROJECTS
+===================================================== */
+
+.wardrobe-projects {
+
+    width: 92%;
+
+    max-width: 1450px;
+
+    margin: 120px auto 0;
+
+    padding: 100px 0;
+
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.projects-heading {
+
+    max-width: 750px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.projects-label {
+
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #C8A165;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.projects-heading h2 {
+
+    margin: 0;
+
+    color: #222;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 52px;
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+}
+
+
+.projects-heading h2 strong {
+
+    color: #C8A165;
+
+    font-weight: 500;
+
+}
+
+
+.projects-heading p {
+
+    max-width: 650px;
+
+    margin-top: 22px;
+
+    color: #777;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+}
+
+
+/* =====================================================
+   FILTER
+===================================================== */
+
+.project-filter {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 45px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+}
+
+
+.project-filter::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+.project-filter button {
+
+    flex-shrink: 0;
+
+    padding: 11px 20px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 30px;
+
+    background: #fff;
+
+    color: #555;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+
+}
+
+
+.project-filter button:hover {
+
+    border-color: #C8A165;
+
+    color: #C8A165;
+
+}
+
+
+.project-filter button.active {
+
+    border-color: #C8A165;
+
+    background: #C8A165;
+
+    color: #fff;
+
+}
+
+
+/* =====================================================
+   PROJECT GRID
+===================================================== */
+
+.project-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 35px;
+
+}
+
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
+.project-card {
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #e9e9e9;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, .06);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+.project-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .11);
+
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.project-image {
+
+    position: relative;
+
+    height: 420px;
+
+    overflow: hidden;
+
+    background: #eee;
+
+}
+
+
+.project-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .7s ease;
+
+}
+
+
+.project-card:hover
+.project-image img {
+
+    transform: scale(1.07);
+
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.project-number {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 20px;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: 1px solid
+        rgba(255,255,255,.7);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.25);
+
+    color: #fff;
+
+    font-size: 12px;
+
+    backdrop-filter: blur(5px);
+
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.project-overlay {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    padding: 35px 30px 25px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.75),
+            rgba(0,0,0,0)
+        );
+
+}
+
+
+.project-overlay span {
+
+    color: #C8A165;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+.project-overlay h3 {
+
+    margin: 8px 0 0;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.project-content {
+
+    padding: 28px 30px 32px;
+
+}
+
+
+.project-location {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+}
+
+
+.project-location span {
+
+    color: #999;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.project-content > h3 {
+
+    margin: 0 0 12px;
+
+    color: #222;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 25px;
+
+}
+
+
+.project-content > p {
+
+    margin: 0 0 25px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   SPECIFICATIONS
+===================================================== */
+
+.project-specs {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-top: 1px solid #eee;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+
+.project-specs div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.project-specs small {
+
+    color: #999;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.project-specs strong {
+
+    color: #333;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.project-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 22px;
+
+    padding: 12px 20px;
+
+    border: 1px solid #C8A165;
+
+    border-radius: 4px;
+
+    background: transparent;
+
+    color: #C8A165;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+
+}
+
+
+.project-button span {
+
+    font-size: 18px;
+
+    transition: transform .3s ease;
+
+}
+
+
+.project-button:hover {
+
+    background: #C8A165;
+
+    color: #fff;
+
+}
+
+
+.project-button:hover span {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.projects-bottom {
+
+    margin-top: 90px;
+
+    padding: 70px 30px;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7f3ec,
+            #fff
+        );
+
+}
+
+
+.projects-bottom span {
+
+    color: #C8A165;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.projects-bottom h3 {
+
+    margin: 15px 0 25px;
+
+    color: #222;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 36px;
+
+    font-weight: 400;
+
+}
+
+
+.projects-bottom button {
+
+    padding: 13px 25px;
+
+    border: 1px solid #C8A165;
+
+    border-radius: 4px;
+
+    background: #C8A165;
+
+    color: #fff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+
+}
+
+
+.projects-bottom button:hover {
+
+    background: transparent;
+
+    color: #C8A165;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .wardrobe-projects {
+
+        margin-top: 80px;
+
+        padding: 80px 0;
+
+    }
+
+
+    .projects-heading h2 {
+
+        font-size: 42px;
+
+    }
+
+
+    .project-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .wardrobe-projects {
+
+        width: 94%;
+
+        padding: 60px 0;
+
+    }
+
+
+    .projects-heading h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .projects-heading p {
+
+        font-size: 13px;
+
+    }
+
+
+    .project-image {
+
+        height: 320px;
+
+    }
+
+
+    .project-content {
+
+        padding: 23px;
+
+    }
+
+
+    .project-overlay {
+
+        padding: 30px 22px 20px;
+
+    }
+
+
+    .project-overlay h3 {
+
+        font-size: 23px;
+
+    }
+
+
+    .projects-bottom {
+
+        padding: 50px 20px;
+
+    }
+
+
+    .projects-bottom h3 {
+
+        font-size: 28px;
+
+    }
+
+}
+
+/* =====================================
+      PROJECT HERO
+===================================== */
+
+.projects-hero {
+  position: relative;
+
+  width: 100%;
+  height: 620px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 70% 40%,
+      rgba(200, 161, 101, 0.16),
+      transparent 35%
+    ),
+    #171613;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: white;
+}
+
+
+/* =====================================
+      BACKGROUND GRID
+===================================== */
+
+.hero-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent
+  );
+}
+
+
+/* =====================================
+      DECORATIVE CIRCLES
+===================================== */
+
+.hero-circle {
+  position: absolute;
+
+  border: 1px solid rgba(200, 161, 101, 0.3);
+
+  border-radius: 50%;
+}
+
+
+.hero-circle-one {
+  width: 420px;
+
+  height: 420px;
+
+  right: -120px;
+
+  top: 80px;
+}
+
+
+.hero-circle-two {
+  width: 280px;
+
+  height: 280px;
+
+  right: -50px;
+
+  top: 150px;
+
+  border-color: rgba(200, 161, 101, 0.15);
+}
+
+
+/* =====================================
+      HERO CONTENT
+===================================== */
+
+.projects-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  padding: 40px;
+
+  transform: translateY(65px);
+}
+
+
+/* =====================================
+      EYEBROW
+===================================== */
+
+.hero-eyebrow {
+  display: block;
+
+  color: #C8A165;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 5px;
+
+  margin-bottom: 25px;
+}
+
+
+/* =====================================
+      MAIN TITLE
+===================================== */
+
+.projects-hero-content h1 {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(60px, 8vw, 110px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  margin: 0;
+
+  letter-spacing: -3px;
+}
+
+
+.projects-hero-content h1 strong {
+  color: #C8A165;
+
+  font-weight: 500;
+}
+
+
+/* =====================================
+      DESCRIPTION
+===================================== */
+
+.projects-hero-content p {
+  max-width: 600px;
+
+  margin: 35px auto 0;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.7);
+}
+
+
+/* =====================================
+      HERO LINE
+===================================== */
+
+.hero-line {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 40px;
+}
+
+
+.hero-line span {
+  width: 70px;
+
+  height: 1px;
+
+  background: #C8A165;
+
+  opacity: 0.5;
+}
+
+
+.hero-line strong {
+  color: #C8A165;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =====================================
+      BOTTOM LABEL
+===================================== */
+
+.hero-bottom-text {
+  position: absolute;
+
+  bottom: 30px;
+
+  left: 40px;
+
+  color: rgba(255,255,255,0.35);
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+}
+
+
+/* =====================================
+      MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+  .projects-hero {
+    height: 550px;
+  }
+
+
+  .projects-hero-content {
+    padding: 25px;
+
+    transform: translateY(30px);
+  }
+
+
+  .projects-hero-content h1 {
+    font-size: 60px;
+
+    letter-spacing: -2px;
+  }
+
+
+  .projects-hero-content p {
+    font-size: 14px;
+  }
+
+
+  .hero-circle-one {
+    width: 300px;
+
+    height: 300px;
+
+    right: -150px;
+  }
+
+
+  .hero-circle-two {
+    width: 200px;
+
+    height: 200px;
+
+    right: -100px;
+  }
+
+
+  .hero-bottom-text {
+    left: 20px;
+  }
+
+}

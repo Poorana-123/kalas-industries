@@ -1,24 +1,37 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import {
   FaBars,
   FaTimes,
   FaChevronDown,
 } from "react-icons/fa";
 
+import { Link } from "react-router-dom";
+
 import "../styles/Navbar.css";
+
 import logo from "../assets/logo-remove.png";
+
 
 /* =====================================
         MENU DATA
 ===================================== */
 
 const menuData = [
+
+  /* =====================================
+        COLLECTIONS
+===================================== */
+
   {
     title: "Collections",
     section: "collections",
+
     columns: [
+
       {
         heading: "Wardrobes",
+
         links: [
           "Sliding Wardrobes",
           "Openable Wardrobes",
@@ -26,8 +39,10 @@ const menuData = [
           "Glass Wardrobes",
         ],
       },
+
       {
         heading: "Living Room",
+
         links: [
           "TV Units",
           "Display Units",
@@ -35,8 +50,10 @@ const menuData = [
           "Bookshelves",
         ],
       },
+
       {
         heading: "Kitchen",
+
         links: [
           "Straight Kitchen",
           "L-Shaped Kitchen",
@@ -44,8 +61,10 @@ const menuData = [
           "Island Kitchen",
         ],
       },
+
       {
         heading: "Furniture",
+
         links: [
           "Bedroom Furniture",
           "Office Furniture",
@@ -53,15 +72,24 @@ const menuData = [
           "Custom Interiors",
         ],
       },
+
     ],
   },
+
+
+  /* =====================================
+        MATERIALS
+===================================== */
 
   {
     title: "Materials",
     section: "materials",
+
     columns: [
+
       {
         heading: "Boards",
+
         links: [
           "HDHMR",
           "Marine Plywood",
@@ -69,8 +97,10 @@ const menuData = [
           "Particle Board",
         ],
       },
+
       {
         heading: "Finishes",
+
         links: [
           "Laminate",
           "Acrylic",
@@ -78,8 +108,10 @@ const menuData = [
           "Glass Finish",
         ],
       },
+
       {
         heading: "Hardware",
+
         links: [
           "Soft Close Hinges",
           "Tandem Drawers",
@@ -87,8 +119,10 @@ const menuData = [
           "Lift-Up Mechanisms",
         ],
       },
+
       {
         heading: "Accessories",
+
         links: [
           "Wardrobe Accessories",
           "Kitchen Accessories",
@@ -96,15 +130,24 @@ const menuData = [
           "Handles",
         ],
       },
+
     ],
   },
+
+
+  /* =====================================
+        FEATURES
+===================================== */
 
   {
     title: "Features",
     section: "features",
+
     columns: [
+
       {
         heading: "Performance",
+
         links: [
           "Soft Close",
           "Scratch Resistant",
@@ -112,8 +155,10 @@ const menuData = [
           "Termite Resistant",
         ],
       },
+
       {
         heading: "Design",
+
         links: [
           "Custom Sizes",
           "Modern Finishes",
@@ -121,8 +166,10 @@ const menuData = [
           "Glass Doors",
         ],
       },
+
       {
         heading: "Technology",
+
         links: [
           "German Hardware",
           "Precision Manufacturing",
@@ -130,8 +177,10 @@ const menuData = [
           "Edge Banding",
         ],
       },
+
       {
         heading: "Benefits",
+
         links: [
           "Easy Maintenance",
           "Long Life",
@@ -139,353 +188,490 @@ const menuData = [
           "Warranty",
         ],
       },
+
     ],
   },
+
+
+  /* =====================================
+        PROJECTS
+        SEPARATE PAGE
+===================================== */
 
   {
     title: "Projects",
-    section: "projects",
-    columns: [
-      {
-        heading: "Residential",
-        links: [
-          "Apartments",
-          "Independent Houses",
-          "Luxury Villas",
-        ],
-      },
-      {
-        heading: "Commercial",
-        links: [
-          "Office Interiors",
-          "Retail Stores",
-          "Workspaces",
-        ],
-      },
-      {
-        heading: "Showcase",
-        links: [
-          "Before & After",
-          "Completed Projects",
-          "Customer Stories",
-        ],
-      },
-      {
-        heading: "Resources",
-        links: [
-          "Case Studies",
-          "Design Ideas",
-          "Testimonials",
-        ],
-      },
-    ],
+    path: "/projects",
+    columns: null,
   },
+
+
+  /* =====================================
+        GALLERY
+        SEPARATE PAGE
+===================================== */
 
   {
     title: "Gallery",
-    section: "gallery",
-    columns: [
-      {
-        heading: "Wardrobes",
-        links: [
-          "Sliding",
-          "Openable",
-          "Walk-in",
-          "Glass",
-        ],
-      },
-      {
-        heading: "Kitchen",
-        links: [
-          "Modern",
-          "Luxury",
-          "Compact",
-          "Island",
-        ],
-      },
-      {
-        heading: "Living",
-        links: [
-          "TV Units",
-          "Crockery",
-          "Display Units",
-          "Bookshelves",
-        ],
-      },
-      {
-        heading: "More",
-        links: [
-          "Bedroom",
-          "Office",
-          "Dining",
-          "Custom",
-        ],
-      },
-    ],
+    path: "/gallery",
+    columns: null,
   },
+
+
+  /* =====================================
+        EXPERIENCE CENTRE
+        SEPARATE PAGE
+===================================== */
 
   {
     title: "Experience Centre",
-    section: "experience",
-    columns: [
-      {
-        heading: "Visit",
-        links: [
-          "Showroom",
-          "Factory Tour",
-          "Virtual Tour",
-        ],
-      },
-      {
-        heading: "Consultation",
-        links: [
-          "Book Appointment",
-          "Expert Advice",
-          "Design Session",
-        ],
-      },
-      {
-        heading: "Resources",
-        links: [
-          "Catalogues",
-          "Material Samples",
-          "Design Guide",
-        ],
-      },
-      {
-        heading: "Support",
-        links: [
-          "Customer Care",
-          "After Sales",
-          "FAQ",
-        ],
-      },
-    ],
+    path: "/experience",
+    columns: null,
   },
+
+
+  /* =====================================
+        CONTACT
+        SEPARATE PAGE
+===================================== */
 
   {
     title: "Contact",
-    section: "contact",
-    columns: [
-      {
-        heading: "Reach Us",
-        links: [
-          "Office",
-          "Factory",
-          "Showroom",
-        ],
-      },
-      {
-        heading: "Sales",
-        links: [
-          "Request Quote",
-          "Book Consultation",
-          "Dealer Enquiry",
-        ],
-      },
-      {
-        heading: "Support",
-        links: [
-          "Installation",
-          "Warranty",
-          "Service",
-        ],
-      },
-      {
-        heading: "Connect",
-        links: [
-          "WhatsApp",
-          "Email",
-          "Social Media",
-        ],
-      },
-    ],
+    path: "/contact",
+    columns: null,
   },
+
 ];
+
 
 /* =====================================
         COMPONENT
 ===================================== */
 
 const Navbar = () => {
+
   const [menuOpen, setMenuOpen] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
+
   const [megaMenu, setMegaMenu] = useState(null);
+
   const [isMobile, setIsMobile] = useState(
     window.innerWidth <= 992
   );
 
-  /* Scroll Effect */
+
+  /* =====================================
+        SCROLL EFFECT
+  ===================================== */
+
   useEffect(() => {
+
     const handleScroll = () => {
+
       setScrolled(window.scrollY > 50);
+
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
 
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
+    return () => {
+
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+
+    };
+
   }, []);
 
-  /* Detect Mobile */
+
+  /* =====================================
+        MOBILE DETECTION
+  ===================================== */
+
   useEffect(() => {
+
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 992);
+
+      setIsMobile(
+        window.innerWidth <= 992
+      );
 
       if (window.innerWidth > 992) {
+
         setMenuOpen(false);
+
       }
+
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
 
-    return () =>
-      window.removeEventListener("resize", handleResize);
+    return () => {
+
+      window.removeEventListener(
+        "resize",
+        handleResize
+      );
+
+    };
+
   }, []);
 
+
+  /* =====================================
+        TOGGLE MEGA MENU
+  ===================================== */
+
   const toggleMegaMenu = (index) => {
-    if (megaMenu === index) {
-      setMegaMenu(null);
-    } else {
-      setMegaMenu(index);
-    }
+
+    setMegaMenu(
+      megaMenu === index
+        ? null
+        : index
+    );
+
   };
 
-    return (
-    <header className={scrolled ? "navbar scrolled" : "navbar"}>
+
+  /* =====================================
+        CLOSE MENU
+  ===================================== */
+
+  const closeMenus = () => {
+
+    setMegaMenu(null);
+
+    setMenuOpen(false);
+
+  };
+  const location = useLocation();
+
+
+  /* =====================================
+        RENDER
+  ===================================== */
+
+  return (
+
+    <header
+  className={
+    scrolled
+      ? "navbar scrolled"
+      : "navbar"
+  }
+>
+
       <div className="nav-container">
 
-        {/* ================= Logo ================= */}
+
+        {/* =================================
+              LOGO
+        ================================= */}
+
         <div className="logo">
+
           <div className="logo-floating">
-            <img src={logo} alt="Kala's Industries" />
+
+            <img
+              src={logo}
+              alt="Kala's Industries"
+            />
+
           </div>
+
         </div>
 
-        {/* ================= Navigation ================= */}
-        <ul className={menuOpen ? "nav-links active" : "nav-links"}>
 
-          {menuData.map((menu, index) => (
+        {/* =================================
+              NAVIGATION
+        ================================= */}
 
-            <li
-              key={menu.title}
-              className="mega-parent"
+        <ul
+          className={
+            menuOpen
+              ? "nav-links active"
+              : "nav-links"
+          }
+        >
 
-              onMouseEnter={() => {
-                if (!isMobile) {
-                  setMegaMenu(index);
+          {menuData.map(
+            (menu, index) => (
+
+              <li
+                key={menu.title}
+
+                className={
+                  menu.columns
+                    ? "mega-parent"
+                    : ""
                 }
-              }}
 
-              onMouseLeave={() => {
-                if (!isMobile) {
-                  setMegaMenu(null);
-                }
-              }}
-            >
+                onMouseEnter={() => {
 
-              {/* Menu Title */}
-              <a
-                href={`#${menu.section}`}
-                onClick={(e) => {
+                  if (
+                    !isMobile &&
+                    menu.columns
+                  ) {
 
-                  if (isMobile) {
+                    setMegaMenu(index);
 
-                    e.preventDefault();
+                  }
 
-                    toggleMegaMenu(index);
+                }}
 
-                  } else {
+                onMouseLeave={() => {
 
-                    setMenuOpen(false);
+                  if (
+                    !isMobile &&
+                    menu.columns
+                  ) {
+
+                    setMegaMenu(null);
 
                   }
 
                 }}
               >
 
-                <span>{menu.title}</span>
 
-                <FaChevronDown
-                  className={`down-icon ${
-                    megaMenu === index ? "rotate" : ""
-                  }`}
-                />
+                {/* =================================
+                      MAIN MENU LINK
+                ================================= */}
 
-              </a>
+                <Link
 
-              {/* ================= Mega Menu ================= */}
+                  to={
+                    menu.path ||
+                    `#${menu.section}`
+                  }
 
-              <div
-                className={`mega-menu ${
-                  megaMenu === index ? "show" : ""
-                }`}
-              >
+                  onClick={(e) => {
 
-                {menu.columns.map((column) => (
+                    /* =============================
+                       COLLECTIONS / MATERIALS /
+                       FEATURES
+                    ============================= */
+
+                    if (menu.columns) {
+
+                      if (isMobile) {
+
+                        e.preventDefault();
+
+                        toggleMegaMenu(index);
+
+                      }
+
+                      else {
+
+                        setMenuOpen(false);
+
+                      }
+
+                    }
+
+
+                    /* =============================
+                       SEPARATE PAGES
+                    ============================= */
+
+                    else {
+
+                      setMegaMenu(null);
+
+                      setMenuOpen(false);
+
+                    }
+
+                  }}
+                >
+
+                  <span>
+                    {menu.title}
+                  </span>
+
+
+                  {/* =================================
+                        ARROW ONLY FOR FIRST 3
+                  ================================= */}
+
+                  {menu.columns && (
+
+                    <FaChevronDown
+
+                      className={
+                        `down-icon ${
+                          megaMenu === index
+                            ? "rotate"
+                            : ""
+                        }`
+                      }
+
+                    />
+
+                  )}
+
+                </Link>
+
+
+                {/* =================================
+                      MEGA MENU
+                      COLLECTIONS
+                      MATERIALS
+                      FEATURES
+                ================================= */}
+
+                {menu.columns && (
 
                   <div
-                    className="mega-column"
-                    key={column.heading}
+
+                    className={
+                      `mega-menu ${
+                        megaMenu === index
+                          ? "show"
+                          : ""
+                      }`
+                    }
+
                   >
 
-                    <h4>{column.heading}</h4>
+                    {menu.columns.map(
+                      (column) => (
 
-                    {column.links.map((link) => (
+                        <div
 
-                      <a
-                        href="#"
-                        key={link}
-                        onClick={() => {
-                          setMenuOpen(false);
-                          setMegaMenu(null);
-                        }}
-                      >
-                        {link}
-                      </a>
+                          className="mega-column"
 
-                    ))}
+                          key={
+                            column.heading
+                          }
+
+                        >
+
+                          <h4>
+                            {column.heading}
+                          </h4>
+
+
+                          {column.links.map(
+                            (link) => (
+
+                              <a
+
+                                href="#"
+
+                                key={link}
+
+                                onClick={() => {
+
+                                  closeMenus();
+
+                                }}
+
+                              >
+
+                                {link}
+
+                              </a>
+
+                            )
+                          )}
+
+                        </div>
+
+                      )
+                    )}
 
                   </div>
 
-                ))}
+                )}
 
-              </div>
+              </li>
 
-            </li>
-
-          ))}
+            )
+          )}
 
         </ul>
 
-        {/* ================= CTA Button ================= */}
 
-        <button className="consult-btn">
+        {/* =================================
+              BOOK CONSULTATION
+        ================================= */}
+
+        <button
+
+          className="consult-btn"
+
+          onClick={() => {
+
+            closeMenus();
+
+            const section =
+              document.getElementById(
+                "consultation"
+              );
+
+            if (section) {
+
+              section.scrollIntoView({
+                behavior: "smooth",
+              });
+
+            }
+
+          }}
+
+        >
+
           Book Consultation
+
         </button>
 
-        {/* ================= Mobile Menu Icon ================= */}
+
+        {/* =================================
+              MOBILE MENU ICON
+        ================================= */}
 
         <div
+
           className="menu-icon"
+
           onClick={() => {
 
             setMenuOpen(!menuOpen);
 
             if (menuOpen) {
+
               setMegaMenu(null);
+
             }
 
           }}
+
         >
 
-          {menuOpen ? <FaTimes /> : <FaBars />}
+          {menuOpen
+            ? <FaTimes />
+            : <FaBars />
+          }
 
         </div>
 
+
       </div>
+
     </header>
+
   );
+
 };
 
 export default Navbar;

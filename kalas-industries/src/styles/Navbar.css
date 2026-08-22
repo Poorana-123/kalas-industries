@@ -359,7 +359,18 @@ body{
 }
 
 /* Desktop Mega Menu */
+/* =====================================
+   INNER PAGE NAVBAR
+===================================== */
 
+/* =====================================
+   INNER PAGE NAVBAR
+===================================== */
+
+.inner-page-navbar {
+  background: #C8A165;
+  box-shadow: 0 4px 20px rgba(248, 154, 154, 0.15);
+}
 .mega-menu{
 
     position:fixed;

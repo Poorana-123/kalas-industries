@@ -1,0 +1,800 @@
+/* =====================================
+        GALLERY PAGE
+===================================== */
+
+.gallery-page {
+  width: 100%;
+
+  background: #f7f5f0;
+
+  color: #1d1b18;
+}
+
+
+/* =====================================
+        HERO
+===================================== */
+
+.gallery-hero {
+  position: relative;
+
+  min-height: 620px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 70% 30%,
+      rgba(200, 161, 101, 0.18),
+      transparent 35%
+    ),
+    #171613;
+}
+
+
+.gallery-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 600px;
+
+  height: 600px;
+
+  border: 1px solid rgba(200, 161, 101, 0.18);
+
+  border-radius: 50%;
+
+  right: -180px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+
+.gallery-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+
+  height: 400px;
+
+  border: 1px solid rgba(200, 161, 101, 0.12);
+
+  border-radius: 50%;
+
+  right: -80px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+
+/* =====================================
+        HERO CONTENT
+===================================== */
+
+.gallery-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  padding: 40px;
+
+  transform: translateY(45px);
+}
+
+
+.gallery-hero-content > span {
+  color: #C8A165;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 5px;
+}
+
+
+.gallery-hero-content h1 {
+  margin: 25px 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(60px, 8vw, 110px);
+
+  line-height: 0.95;
+
+  font-weight: 400;
+
+  color: white;
+}
+
+
+.gallery-hero-content h1 strong {
+  color: #C8A165;
+
+  font-weight: 500;
+}
+
+
+.gallery-hero-content p {
+  max-width: 600px;
+
+  margin: auto;
+
+  color: rgba(255,255,255,0.7);
+
+  line-height: 1.8;
+
+  font-size: 16px;
+}
+
+
+.gallery-hero-number {
+  position: absolute;
+
+  bottom: 30px;
+
+  left: 40px;
+
+  color: rgba(255,255,255,0.3);
+
+  font-size: 12px;
+
+  letter-spacing: 3px;
+}
+
+
+/* =====================================
+        COMMON SECTION
+===================================== */
+
+.gallery-section {
+  max-width: 1300px;
+
+  margin: auto;
+
+  padding: 110px 40px;
+}
+
+
+.gallery-section-heading {
+  max-width: 700px;
+
+  margin-bottom: 65px;
+}
+
+
+.gallery-section-heading > span {
+  color: #C8A165;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+.gallery-section-heading h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: 55px;
+
+  line-height: 1.1;
+
+  font-weight: 400;
+
+  margin: 18px 0;
+}
+
+
+.gallery-section-heading h2 strong {
+  color: #C8A165;
+
+  font-weight: 500;
+}
+
+
+.gallery-section-heading p {
+  max-width: 600px;
+
+  color: #6d6a65;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================
+        FINISH MASONRY
+===================================== */
+
+.gallery-masonry {
+  display: grid;
+
+  grid-template-columns:
+    1.4fr 1fr;
+
+  grid-template-rows:
+    330px 330px;
+
+  gap: 20px;
+}
+
+
+.gallery-item {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+
+.gallery-large {
+  grid-row: span 2;
+}
+
+
+.gallery-item img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.7s ease;
+}
+
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+
+.gallery-item::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      transparent 45%,
+      rgba(0,0,0,0.8)
+    );
+}
+
+
+.gallery-item-content {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 30px;
+
+  left: 30px;
+
+  color: white;
+}
+
+
+.gallery-item-content span {
+  color: #C8A165;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+}
+
+
+.gallery-item-content h3 {
+  font-family: "Playfair Display", serif;
+
+  font-size: 28px;
+
+  font-weight: 400;
+
+  margin: 7px 0 0;
+}
+
+
+/* =====================================
+        DARK DETAIL SECTION
+===================================== */
+
+.gallery-dark {
+  max-width: none;
+
+  background: #171613;
+
+  color: white;
+
+  padding-left: max(40px, calc((100vw - 1220px) / 2));
+
+  padding-right: max(40px, calc((100vw - 1220px) / 2));
+}
+
+
+.gallery-dark .gallery-section-heading p {
+  color: rgba(255,255,255,0.6);
+}
+
+
+/* =====================================
+        DETAIL GRID
+===================================== */
+
+.detail-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+
+.detail-card {
+  position: relative;
+
+  min-height: 280px;
+
+  padding: 35px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.detail-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #C8A165;
+}
+
+
+.detail-number {
+  color: rgba(255,255,255,0.3);
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+}
+
+
+.detail-icon {
+  margin: 35px 0 20px;
+
+  color: #C8A165;
+
+  font-size: 35px;
+}
+
+
+.detail-card h3 {
+  font-family: "Playfair Display", serif;
+
+  font-size: 25px;
+
+  font-weight: 400;
+
+  margin: 0 0 15px;
+}
+
+
+.detail-card p {
+  color: rgba(255,255,255,0.55);
+
+  line-height: 1.7;
+
+  font-size: 14px;
+}
+
+
+/* =====================================
+        CRAFTSMANSHIP
+===================================== */
+
+.craftsmanship {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+
+.craft-image {
+  height: 600px;
+
+  overflow: hidden;
+}
+
+
+.craft-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+.craft-content {
+  max-width: 550px;
+}
+
+
+.craft-content > span {
+  color: #C8A165;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+.craft-content h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: 55px;
+
+  line-height: 1.1;
+
+  font-weight: 400;
+
+  margin: 20px 0;
+}
+
+
+.craft-content h2 strong {
+  color: #C8A165;
+
+  font-weight: 500;
+}
+
+
+.craft-content > p {
+  color: #666;
+
+  line-height: 1.8;
+}
+
+
+.craft-points {
+  margin-top: 40px;
+}
+
+
+.craft-points div {
+  display: flex;
+
+  gap: 25px;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid #ddd;
+}
+
+
+.craft-points strong {
+  color: #C8A165;
+
+  font-size: 12px;
+
+  letter-spacing: 2px;
+}
+
+
+.craft-points span {
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+
+/* =====================================
+        SIGNATURE SPACES
+===================================== */
+
+.signature-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+
+.signature-card {
+  position: relative;
+
+  height: 500px;
+
+  overflow: hidden;
+}
+
+
+.signature-card img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease;
+}
+
+
+.signature-card:hover img {
+  transform: scale(1.05);
+}
+
+
+.signature-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      transparent 45%,
+      rgba(0,0,0,0.8)
+    );
+}
+
+
+.signature-card > div {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 35px;
+
+  bottom: 35px;
+
+  color: white;
+}
+
+
+.signature-card span {
+  color: #C8A165;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+}
+
+
+.signature-card h3 {
+  font-family: "Playfair Display", serif;
+
+  font-size: 30px;
+
+  font-weight: 400;
+
+  margin: 8px 0 0;
+}
+
+
+/* =====================================
+        FINAL SECTION
+===================================== */
+
+.gallery-final {
+  padding: 120px 30px;
+
+  background: #171613;
+
+  color: white;
+
+  text-align: center;
+}
+
+
+.gallery-final > span {
+  color: #C8A165;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 4px;
+}
+
+
+.gallery-final h2 {
+  font-family: "Playfair Display", serif;
+
+  font-size: 65px;
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
+  margin: 25px 0;
+}
+
+
+.gallery-final h2 strong {
+  color: #C8A165;
+
+  font-weight: 500;
+}
+
+
+.gallery-final p {
+  color: rgba(255,255,255,0.6);
+
+  margin-bottom: 35px;
+}
+
+
+.gallery-final button {
+  padding: 14px 30px;
+
+  background: transparent;
+
+  border: 1px solid #C8A165;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+}
+
+
+.gallery-final button:hover {
+  background: #C8A165;
+
+  color: #171613;
+}
+
+
+/* =====================================
+        MOBILE
+===================================== */
+
+@media (max-width: 900px) {
+
+  .gallery-masonry {
+    grid-template-columns: 1fr;
+
+    grid-template-rows: auto;
+  }
+
+
+  .gallery-large {
+    grid-row: auto;
+  }
+
+
+  .detail-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .craftsmanship {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .gallery-hero {
+    min-height: 550px;
+  }
+
+
+  .gallery-hero-content {
+    padding: 25px;
+
+    transform: translateY(30px);
+  }
+
+
+  .gallery-hero-content h1 {
+    font-size: 60px;
+  }
+
+
+  .gallery-section {
+    padding: 75px 20px;
+  }
+
+
+  .gallery-section-heading h2 {
+    font-size: 40px;
+  }
+
+
+  .gallery-masonry {
+    display: flex;
+
+    flex-direction: column;
+  }
+
+
+  .gallery-item,
+  .gallery-large {
+    height: 400px;
+  }
+
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .craft-image {
+    height: 400px;
+  }
+
+
+  .craft-content h2 {
+    font-size: 40px;
+  }
+
+
+  .signature-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .signature-card {
+    height: 400px;
+  }
+
+
+  .gallery-final {
+    padding: 80px 20px;
+  }
+
+
+  .gallery-final h2 {
+    font-size: 45px;
+  }
+
+}
